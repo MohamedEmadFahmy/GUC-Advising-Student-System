@@ -1,0 +1,32 @@
+﻿@page
+@model Milestone_3.Pages.LoginModel
+@{
+}
+
+
+<br>
+<h1>Instructors</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Faculty</th>
+            <th>Office</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var instructor in Model.Instructors)
+        {
+            <tr>
+                <td>@instructor.id</td>
+                <td>@instructor.name</td>
+                <td>@instructor.email</td>
+                <td>@instructor.faculty</td>
+                <td>@instructor.office</td>
+            </tr>
+        }
+    </tbody>
+</table>
