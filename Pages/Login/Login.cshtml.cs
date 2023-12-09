@@ -54,7 +54,8 @@ namespace Milestone_3.Pages
 
 
 
-    public class Instructor {
+    public class Instructor
+    {
         public string id;
         public string name;
         public string email;

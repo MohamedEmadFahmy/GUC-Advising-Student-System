@@ -1,0 +1,58 @@
+﻿@page
+@model MyApp.Namespace.StudentRegisterModel
+@{
+}
+
+
+<div id="login-page">
+    <div id="container">
+        @if(Model.successMessage.Length > 0)
+        {
+            <h4><strong>@Model.successMessage</strong></h4>
+            <h4><strong>Your id is: @Model.s.id</strong></h4>
+        }
+        <h1>Student Register</h1>
+
+        @if(Model.errorMessage.Length > 0){
+            <h1><strong>@Model.errorMessage</strong></h1>
+        }
+
+        <form method="post">
+            
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="faculty">Faculty</label>
+            <input type="text" id="faculty" name="faculty" required>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="major">Major</label>
+            <input type="text" id="major" name="major" required>
+
+            <label for="semester">Semester</label>
+            <input type="number" id="semester" name="semester" required>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+
+        <br>
+        <br>
+        <a asp-area="" asp-page="AdvisorRegister">Advisor</a>
+        <br>
+        <br>
+        <br>
+        <a asp-area="" asp-page="/Login/StudentLogin">Go to Login</a>
+
+    </div>
+    
+</div>

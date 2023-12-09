@@ -1,0 +1,30 @@
+﻿@page
+@model MyApp.Namespace.StudentLoginModel
+@{
+}
+
+
+
+<div id="login-page">
+    <div id="container">
+        <h1>Student Login</h1>
+
+        <form method="post">
+
+            <label for="id">ID</label>
+            <input type="text" id="id" id="id" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit">
+
+        </form>
+        <a asp-area="" asp-page="AdvisorLogin">Advisor</a>
+        <br>
+        <br>
+        <br>
+        <a asp-area="" asp-page="/Register/StudentRegister">Go to Register</a>
+    </div>
+    
+</div>

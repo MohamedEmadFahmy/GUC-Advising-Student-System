@@ -1,3 +1,268 @@
+/* _content/Milestone_3/Pages/Index.cshtml.rz.scp.css */
+*[b-bxmd4mkyvy] {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div#login-page[b-bxmd4mkyvy] {
+    /* background-color: #008000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+div#container[b-bxmd4mkyvy] {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(223, 222, 222);
+    border-radius: 5px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form[b-bxmd4mkyvy]{
+    height: 100%;
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+
+    /* margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-sizing: border-box; */
+
+
+    outline: 1px solid red;
+}
+
+p[b-bxmd4mkyvy] {
+    font-size: 40px;
+}
+/* _content/Milestone_3/Pages/Login/AdvisorLogin.cshtml.rz.scp.css */
+*[b-2lw3dcnhjc] {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div#login-page[b-2lw3dcnhjc] {
+    /* background-color: #008000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+div#container[b-2lw3dcnhjc] {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(223, 222, 222);
+    border-radius: 5px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form[b-2lw3dcnhjc]{
+    height: 100%;
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+
+    /* margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-sizing: border-box; */
+
+
+    outline: 1px solid red;
+}
+
+p[b-2lw3dcnhjc] {
+    font-size: 40px;
+}
+/* _content/Milestone_3/Pages/Login/StudentLogin.cshtml.rz.scp.css */
+*[b-jfwj33pb7b] {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div#login-page[b-jfwj33pb7b] {
+    /* background-color: #008000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+div#container[b-jfwj33pb7b] {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(223, 222, 222);
+    border-radius: 5px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form[b-jfwj33pb7b]{
+    height: 100%;
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+
+    /* margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-sizing: border-box; */
+
+
+    outline: 1px solid red;
+}
+
+p[b-jfwj33pb7b] {
+    font-size: 40px;
+}
+/* _content/Milestone_3/Pages/Register/AdvisorRegister.cshtml.rz.scp.css */
+*[b-fkln9uxg7q] {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div#login-page[b-fkln9uxg7q] {
+    /* background-color: #008000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+div#container[b-fkln9uxg7q] {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(223, 222, 222);
+    border-radius: 5px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form[b-fkln9uxg7q]{
+    height: 100%;
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+
+    /* margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-sizing: border-box; */
+
+
+    outline: 1px solid red;
+}
+
+p[b-fkln9uxg7q] {
+    font-size: 40px;
+}
+/* _content/Milestone_3/Pages/Register/StudentRegister.cshtml.rz.scp.css */
+*[b-mom0maawyx] {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div#login-page[b-mom0maawyx] {
+    /* background-color: #008000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+div#container[b-mom0maawyx] {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(223, 222, 222);
+    border-radius: 5px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form[b-mom0maawyx]{
+    height: 100%;
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+
+    /* margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-sizing: border-box; */
+
+
+    outline: 1px solid red;
+}
+
+p[b-mom0maawyx] {
+    font-size: 40px;
+}
 /* _content/Milestone_3/Pages/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

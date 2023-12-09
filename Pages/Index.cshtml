@@ -1,10 +1,27 @@
 ﻿@page
-@model IndexModel
+@model Milestone_3.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div id="login-page">
+    <div id="container">
+        @* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, enim?</p>*@
+
+        <form action="post">
+            <p>Login</p>
+
+            <p>Email</p>
+            <input type="text" name = "email">
+            
+            <p>Password</p>
+            <input type="text" name = "password">
+
+            <input type="submit">
+            <a asp-area="" asp-page="./Login/Login">Student</a>
+            <a asp-area="" asp-page="./Login/Login">Advisor</a>
+        </form>
+        <a asp-area="" asp-page="./Login/Login">Go to Login</a>
+    </div>
+    
 </div>
