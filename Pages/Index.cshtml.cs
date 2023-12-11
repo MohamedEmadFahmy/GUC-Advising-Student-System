@@ -8,7 +8,8 @@ namespace Milestone_3.Pages
     {
         public IActionResult OnGet()
         {
-            return RedirectToPage("./Register/StudentRegister");
+            // return RedirectToPage("./Register/StudentRegister");
+            return RedirectToPage("./Student/Student");
         }
     }
 }
