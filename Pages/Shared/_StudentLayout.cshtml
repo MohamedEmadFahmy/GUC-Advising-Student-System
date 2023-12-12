@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]Student Portal</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Student.css" asp-append-version="true" />
+</head>
+<body>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark"
+         style="background-color: black">
+        <a class="navbar-brand ms-5" href="#">
+            Student Portal
+        </a>
+ 
+        <div class="collapse navbar-collapse ms-2">
+            <ul class="navbar-nav mr-auto ms-5">
+                <li class="nav-item me-3">
+                    <a class="nav-link" asp-area="" asp-page="/Student/Student">
+                      Home
+                    </a>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Courses
+                    </a>
+                    <ul class="dropdown-menu custom-bg-black">
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View Optional Courses</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View Available Courses</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View Required Courses</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View MissingCourses</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View All Courses</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View Slots</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Choose Instructor</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View Couse Prerequisites</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Exam
+                    </a>
+                    <ul class="dropdown-menu custom-bg-black">
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View All Course Exams</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Register First Makeup Exam</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Register Second Makeup Exam</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Request
+                    </a>
+                    <ul class="dropdown-menu custom-bg-black">
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Send a course request</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Send a credit hour request</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">
+                      Payments
+                    </a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">
+                      Graduation Plan
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    @RenderBody()
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

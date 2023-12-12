@@ -5,6 +5,10 @@
     /* outline: 1px solid red; */
 }
 
+body {
+    background-color: #888787;
+}
+
 a {
     text-decoration: none;
 }

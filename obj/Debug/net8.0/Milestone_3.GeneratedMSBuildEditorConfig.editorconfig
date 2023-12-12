@@ -34,20 +34,76 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Shared/_StudentLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TdHVkZW50TGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ChooseInstructor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxDaG9vc2VJbnN0cnVjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/GraduationPlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxHcmFkdWF0aW9uUGxhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/Payments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxQYXltZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/RegisterFirstMakeup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxSZWdpc3RlckZpcnN0TWFrZXVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/RegisterSecondMakeup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxSZWdpc3RlclNlY29uZE1ha2V1cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/SendCourseRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxTZW5kQ291cnNlUmVxdWVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/SendCreditHoursRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxTZW5kQ3JlZGl0SG91cnNSZXF1ZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/Student.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewAllCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3QWxsQ291cnNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewAllCoursesExams.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3QWxsQ291cnNlc0V4YW1zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewAvailableCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3QXZhaWxhYmxlQ291cnNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewCoursePrereqs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3Q291cnNlUHJlcmVxcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewMissingCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3TWlzc2luZ0NvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewOptionalCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3T3B0aW9uYWxDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/_StudentNavbar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxfU3R1ZGVudE5hdmJhci5jc2h0bWw=
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewRequiredCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3UmVxdWlyZWRDb3Vyc2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Student/ViewSlots.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxWaWV3U2xvdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/_ViewImports.cshtml]
@@ -77,7 +133,3 @@ build_metadata.AdditionalFiles.CssScope = b-fkln9uxg7q
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Register/StudentRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJcU3R1ZGVudFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-mom0maawyx
-
-[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-lgriwpwnbu
