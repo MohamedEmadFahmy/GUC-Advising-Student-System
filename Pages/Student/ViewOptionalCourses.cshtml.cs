@@ -12,6 +12,7 @@ namespace MyApp.Namespace
         public void OnGet()
         {
             isPosted = false;
+            Courses = new List<Course>();
         }
         public void OnPost()
         {
@@ -24,15 +25,15 @@ namespace MyApp.Namespace
                     connection.Open();
 
                     String sql = "Procedures_ViewOptionalCourse";
-                    SqlCommand viewOptionalCourse = new SqlCommand(sql, connection);
-                    viewOptionalCourse.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand(sql, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
 
-                    viewOptionalCourse.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"]) });
+                    cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"]) });
 
-                    viewOptionalCourse.Parameters.Add(new SqlParameter("@current_semester_code", SqlDbType.NVarChar) { Value = Request.Form["SemesterCode"].ToString() });
+                    cmd.Parameters.Add(new SqlParameter("@current_semester_code", SqlDbType.NVarChar) { Value = Request.Form["SemesterCode"].ToString() });
 
-                    SqlDataReader reader = viewOptionalCourse.ExecuteReader();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -40,10 +41,6 @@ namespace MyApp.Namespace
                         {
                             courseId = reader.GetInt32(0),
                             name = reader.GetString(1),
-                            major = reader.GetString(2),
-                            isOffered = reader.GetBoolean(3),
-                            creditHours = reader.GetInt32(4),
-                            semester = reader.GetInt32(5)
                         };
 
 
@@ -66,9 +63,5 @@ namespace MyApp.Namespace
     {
         public int courseId;
         public string name;
-        public string major;
-        public bool isOffered;
-        public int creditHours;
-        public int semester;
     }
 }
