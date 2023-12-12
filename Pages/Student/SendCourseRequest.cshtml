@@ -1,4 +1,107 @@
 ﻿@page
 @model MyApp.Namespace.SendCourseRequestModel
 @{
+    Layout = "/Pages/Shared/_StudentLayout.cshtml";
 }
+
+@*
+    Student ID int,
+    course ID int,
+    type varchar (40),
+    comment varchar (40)
+*@
+
+@* <div class="alert alert-success" role="alert">
+    This is a success alert!
+</div> *@
+
+<div id="left-area">
+    <form method="post">
+        <label for="StudentID" class="form-label fs-4 mt-3">Student ID</label>
+        <input type="text" class="form-control mb-3" name="StudentID" placeholder="Enter Student ID">
+
+        <label for="CourseID" class="form-label fs-4 mt-3">Course ID</label>
+        <input type="text" class="form-control mb-3" name="CourseID" placeholder="Enter Course ID">
+
+        <label class="form-label fs-4 mt-3">Type</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Type" id="courseType" value="Course" checked>
+            <label class="form-check-label" for="courseType">
+                Course
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Type" id="creditHoursType" value="CreditHours">
+            <label class="form-check-label" for="creditHoursType">
+                Credit Hours
+            </label>
+        </div>
+
+        <div id="creditHoursInput" style="display: none;">
+            <label for="CreditHours" class="form-label fs-4 mt-3">Credit Hours</label>
+            <input type="text" class="form-control mb-3" name="CreditHours" placeholder="Enter Credit Hours">
+        </div>
+
+        <label for="Comment" class="form-label fs-4 mt-3">Comment</label>
+        <input type="text" class="form-control mb-3" name="Comment" placeholder="Enter Comment">
+
+        <button type="submit" class="btn btn-secondary mt-3">Submit</button>
+
+        <script>
+        // JavaScript to show/hide the Credit Hours input based on the selected Type
+            document.addEventListener('DOMContentLoaded', function () {
+                const creditHoursTypeRadio = document.getElementById('creditHoursType');
+                const courseTypeRadio = document.getElementById('courseType');
+                const creditHoursInput = document.getElementById('creditHoursInput');
+
+                creditHoursTypeRadio.addEventListener('change', function () {
+                    creditHoursInput.style.display = creditHoursTypeRadio.checked ? 'block' : 'none';
+                });
+
+                courseTypeRadio.addEventListener('change', function () {
+                    creditHoursInput.style.display = courseTypeRadio.checked ? 'none' : 'block';
+                });
+            });
+        </script>
+    </form>
+</div>
+
+
+
+
+<div id="right-area">
+    <table>
+        <tr>
+            <th>Request ID</th>
+            <th>Request Type</th>
+            <th>Request Comment</th>
+            <th>Request Status</th>
+            <th>Requested Credit Hours</th>
+            <th>Requested Course ID</th>
+            <th>Advisor ID</th>
+        </tr>
+        @foreach(var request in Model.Requests){
+            <tr>
+                <td>@request.requestId</td>
+                <td>@request.type</td>
+                <td>@request.comment</td>
+                <td>@request.status</td>
+                @if(@request.creditHours == "None"){
+                    <td class="bg-danger">@request.creditHours</td>
+                }
+                else{
+                    <td>@request.creditHours</td>
+                }
+
+                @if(@request.courseId == "None"){
+                    <td class="bg-danger">@request.courseId</td>
+                }
+                else{
+                    <td>@request.courseId</td>
+                }
+                
+                <td>@request.advisorId</td>
+            </tr>
+        }
+    </table>
+</div>

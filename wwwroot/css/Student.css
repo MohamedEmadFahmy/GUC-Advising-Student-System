@@ -70,7 +70,7 @@ a {
 
 #left-area {
     width: 20.833vw;
-    height: 37.037vh;
+    min-height: 37.037vh;
     /* background-color: red; */
     background-color: rgb(49, 49, 49);
     color: white;

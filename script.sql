@@ -29,3 +29,6 @@ VALUES
     (8, 'W25'),
     (9, 'W25'),
     (10, 'W25');
+
+
+select * from Request
