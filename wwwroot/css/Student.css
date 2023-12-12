@@ -57,9 +57,86 @@ a {
 
 #pageContent {
     background-color: orange;
+    width: 100%;
     display: flex;
+    gap: 200px;
     justify-content: center;
     align-items: center;
 
     height: calc(100vh - var(--navbarHeight));
 }
+
+
+#left-area {
+    width: 400px;
+    height: 400px;
+    /* background-color: red; */
+    background-color: rgb(49, 49, 49);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#left-area input {
+    width: 220px;
+}
+#left-area button[type="submit"] {
+    background-color: orange;
+}
+
+#right-area {
+    /* background-color: blue; */
+    background-color: rgb(49, 49, 49);
+    width: 1100px;
+    height:700px;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+

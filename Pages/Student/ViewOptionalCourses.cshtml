@@ -1,5 +1,49 @@
 ﻿@page
-@model MyApp.Namespace.StudentModel
+@model MyApp.Namespace.ViewOptionalCoursesModel
 @{
     Layout = "/Pages/Shared/_StudentLayout.cshtml";
 }
+
+
+@* <table>
+    <th>
+        <td>Name</td>
+    </th>
+</table> *@
+
+
+<div id="left-area">
+    <form method="post">
+        <label for="StudentID" class="form-label fs-4">Student ID</label>
+        <input type="number" class="form-control" id="StudentID" placeholder="0" value=1>
+        <label for="SemesterCode" class="form-label fs-4 mt-3">Current Semester Code</label>
+        <input type="text" class="form-control mb-3" id="SemesterCode" placeholder="Enter Semester Code" value="S23">
+        <button type="submit" class="btn btn-secondary">Submit</button>   
+    </form>
+</div>
+
+
+<div id="right-area">
+    @if(Model.isPosted){
+        <table>
+            <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Major</th>
+                <th>Is Offered</th>
+                <th>Credit Hours</th>
+                <th>Semester</th>
+            </tr>
+            @foreach(var course in Model.Courses){
+                <tr>
+                    <td>@course.courseId</td>
+                    <td>@course.name</td>
+                    <td>@course.major</td>
+                    <td>@course.isOffered</td>
+                    <td>@course.creditHours</td>
+                    <td>@course.semester</td>
+                </tr>
+            }
+        </table>
+    }
+</div>
