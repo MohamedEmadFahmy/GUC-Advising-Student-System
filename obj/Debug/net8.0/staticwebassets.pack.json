@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Milestone_3.bundle.scp.css"
     },
     {
+      "Id": "D:\\Semester 5\\Databases 1\\Project\\Milestone 3 .netcore\\Milestone_3\\wwwroot\\css\\Student.css",
+      "PackagePath": "staticwebassets\\css\\Student.css"
+    },
+    {
       "Id": "D:\\Semester 5\\Databases 1\\Project\\Milestone 3 .netcore\\Milestone_3\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
