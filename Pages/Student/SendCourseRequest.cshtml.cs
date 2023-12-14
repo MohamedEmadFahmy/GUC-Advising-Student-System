@@ -10,6 +10,8 @@ namespace MyApp.Namespace
 
         public int studentId = 1;
         public List<Request> Requests = new List<Request>();
+
+        public bool isCourseRequest = true;
         public void OnGet()
         {
             try

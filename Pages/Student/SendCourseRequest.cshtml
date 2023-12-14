@@ -20,21 +20,10 @@
         <label for="StudentID" class="form-label fs-4 mt-3">Student ID</label>
         <input type="text" class="form-control mb-3" name="StudentID" placeholder="Enter Student ID">
 
-        <label for="CourseID" class="form-label fs-4 mt-3">Course ID</label>
-        <input type="text" class="form-control mb-3" name="CourseID" placeholder="Enter Course ID">
+        <div id="courseIdInput">
+            <label for="CourseID" class="form-label fs-4 mt-3">Course ID</label>
+            <input type="text" class="form-control mb-3" name="CourseID" placeholder="Enter Course ID">
 
-        <label class="form-label fs-4 mt-3">Type</label>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="Type" id="courseType" value="Course" checked>
-            <label class="form-check-label" for="courseType">
-                Course
-            </label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="Type" id="creditHoursType" value="CreditHours">
-            <label class="form-check-label" for="creditHoursType">
-                Credit Hours
-            </label>
         </div>
 
         <div id="creditHoursInput" style="display: none;">
@@ -45,24 +34,24 @@
         <label for="Comment" class="form-label fs-4 mt-3">Comment</label>
         <input type="text" class="form-control mb-3" name="Comment" placeholder="Enter Comment">
 
+
+        <label class="form-label fs-4 mt-3">Type of Request</label>
+        <div id="radiobuttons">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Type" id="courseType" checked>
+                <label class="form-check-label" for="courseType">
+                    Course
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Type" id="creditHoursType">
+                <label class="form-check-label" for="creditHoursType">
+                    Credit Hours
+                </label>
+            </div>
+        </div>
+
         <button type="submit" class="btn btn-secondary mt-3">Submit</button>
-
-        <script>
-        // JavaScript to show/hide the Credit Hours input based on the selected Type
-            document.addEventListener('DOMContentLoaded', function () {
-                const creditHoursTypeRadio = document.getElementById('creditHoursType');
-                const courseTypeRadio = document.getElementById('courseType');
-                const creditHoursInput = document.getElementById('creditHoursInput');
-
-                creditHoursTypeRadio.addEventListener('change', function () {
-                    creditHoursInput.style.display = creditHoursTypeRadio.checked ? 'block' : 'none';
-                });
-
-                courseTypeRadio.addEventListener('change', function () {
-                    creditHoursInput.style.display = courseTypeRadio.checked ? 'none' : 'block';
-                });
-            });
-        </script>
     </form>
 </div>
 
@@ -70,6 +59,9 @@
 
 
 <div id="right-area">
+    <h1>
+        Request History
+    </h1>
     <table>
         <tr>
             <th>Request ID</th>
@@ -105,3 +97,29 @@
         }
     </table>
 </div>
+
+
+
+<script>
+        // JavaScript to show/hide the Credit Hours input based on the selected Type
+    document.addEventListener('DOMContentLoaded', function () {
+        const creditHoursTypeRadio = document.getElementById('creditHoursType');
+        const courseTypeRadio = document.getElementById('courseType');
+        const creditHoursInput = document.getElementById('creditHoursInput');
+        const courseIdInput = document.getElementById('courseIdInput');
+
+        creditHoursTypeRadio.addEventListener('change', function () {
+            creditHoursInput.style.display = creditHoursTypeRadio.checked ? 'block' : 'none';
+            courseIdInput.style.display = !creditHoursTypeRadio.checked ? 'block' : 'none';
+            @Model.isCourseRequest = false;
+            console.log(@Model.isCourseRequest);
+        });
+
+        courseTypeRadio.addEventListener('change', function () {
+            creditHoursInput.style.display = courseTypeRadio.checked ? 'none' : 'block';
+            courseIdInput.style.display = !courseTypeRadio.checked ? 'none' : 'block';
+            @Model.isCourseRequest = true;
+            console.log(@Model.isCourseRequest);
+        });
+    });
+</script>
