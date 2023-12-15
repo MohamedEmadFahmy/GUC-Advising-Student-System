@@ -9,12 +9,20 @@ namespace MyApp.Namespace
 {
     public class StudentViewSlotModel : PageModel
     {
-        public List<StudentViewSlot> StudentViewSlotList = new List<StudentViewSlot>();
+        public List<CoursesSlotsInstructor> StudentViewSlotList = new List<CoursesSlotsInstructor>();
         public int courseId = 1;
-        public int instructorId = 2;
+        public int instructorId = 1;
+
+        public bool isPosted = false;
 
         public void OnGet()
         {
+            isPosted = false;
+
+        }
+        public void OnPost()
+        {
+            isPosted = true;
             try
             {
                 string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True;Encrypt=False";
@@ -24,24 +32,26 @@ namespace MyApp.Namespace
                     string sql = "SELECT * FROM FN_StudentViewSlot(@CourseID, @InstructorID)";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@CourseID", SqlDbType.Int) { Value = courseId });
-                        command.Parameters.Add(new SqlParameter("@InstructorID", SqlDbType.Int) { Value = instructorId });
+                        command.Parameters.Add(new SqlParameter("@CourseID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["courseID"]) });
+                        command.Parameters.Add(new SqlParameter("@InstructorID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["InstructorID"]) });
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                StudentViewSlot studentViewSlot = new StudentViewSlot
+                                CoursesSlotsInstructor coursesSlotsInstructor = new CoursesSlotsInstructor
                                 {
-                                    SlotId = reader.GetInt32(0),
-                                    Location = reader.GetString(1),
-                                    Time = reader.GetString(2),
-                                    Day = reader.GetString(3),
-                                    CourseName = reader.GetString(4),
-                                    InstructorName = reader.GetString(5)
+                                    course_id = reader.GetInt32(0),
+                                    courseName = reader.GetString(1),
+                                    slot_id = reader.GetInt32(2),
+                                    day = reader.GetString(3),
+                                    time = reader.GetString(4),
+                                    location = reader.GetString(5),
+                                    constructorid = reader.GetInt32(6),
+                                    instructorid = reader.GetInt32(7),
+                                    instructor = reader.GetString(8),
                                 };
-
-                                StudentViewSlotList.Add(studentViewSlot);
+                                StudentViewSlotList.Add(coursesSlotsInstructor);
                             }
                         }
                     }
@@ -56,13 +66,13 @@ namespace MyApp.Namespace
 
     }
 
-    public class StudentViewSlot
-    {
-        public int SlotId { get; set; }
-        public string Location { get; set; }
-        public string Time { get; set; }
-        public string Day { get; set; }
-        public string CourseName { get; set; }
-        public string InstructorName { get; set; }
-    }
+    // public class StudentViewSlot
+    // {
+    //     public int SlotId { get; set; }
+    //     public string Location { get; set; }
+    //     public string Time { get; set; }
+    //     public string Day { get; set; }
+    //     public string CourseName { get; set; }
+    //     public string InstructorName { get; set; }
+    // }
 }

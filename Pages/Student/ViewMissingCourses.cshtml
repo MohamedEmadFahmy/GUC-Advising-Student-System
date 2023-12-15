@@ -4,29 +4,26 @@
     Layout = "/Pages/Shared/_StudentLayout.cshtml";
 }
 
-<div id="left-area">
+@* <div id="left-area">
     <form method="post">
         <label for="StudentID" class="form-label fs-4">Student ID</label>
         <input type="number" class="form-control" name="StudentID" placeholder="0" value=9>
         <button type="submit" class="btn btn-secondary">Submit</button>   
     </form>
-</div>
+</div> *@
 
 
-
-@if(Model.isPosted){
-    <div id="right-area">
-        <table>
+<div id="right-area">
+    <table>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+        </tr>
+        @foreach(var course in Model.Courses){
             <tr>
-                <th>Course ID</th>
-                <th>Course Name</th>
+                <td>@course.courseId</td>
+                <td>@course.name</td>
             </tr>
-            @foreach(var course in Model.Courses){
-                <tr>
-                    <td>@course.courseId</td>
-                    <td>@course.name</td>
-                </tr>
-            }
-        </table>
-    </div>
-}
+        }
+    </table>
+</div>

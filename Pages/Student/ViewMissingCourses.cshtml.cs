@@ -7,14 +7,9 @@ namespace MyApp.Namespace
 {
     public class ViewMissingCoursesModel : PageModel
     {
+        public int studentId = 9;
         public List<Course> Courses = new List<Course>();
-        public bool isPosted = false;
         public void OnGet()
-        {
-            isPosted = false;
-            Courses = new List<Course>();
-        }
-        public void OnPost()
         {
             try
             {
@@ -29,7 +24,7 @@ namespace MyApp.Namespace
                     cmd.CommandType = CommandType.StoredProcedure;
 
 
-                    cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"]) });
+                    cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = studentId });
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -46,7 +41,6 @@ namespace MyApp.Namespace
                     }
 
                     connection.Close();
-                    isPosted = true;
                 }
             }
             catch (Exception ex)

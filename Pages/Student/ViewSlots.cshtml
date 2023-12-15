@@ -4,51 +4,55 @@
     Layout = "/Pages/Shared/_StudentLayout.cshtml";
 }
 
-<h1>
+@* <h1>
      View Slots
-</h1>
+</h1> *@
+
 <div id="left-area">
     <form method="post">
        
-        <label for="courseID">Course ID:</label>
-        <input type="number" name="courseID" id="courseID" placeholder="Enter" required />
+        <div>
+            <label for="CourseID" class="form-label fs-4 mt-3">Course ID</label>
+            <input type="text" class="form-control mb-3" name="CourseID" placeholder="Enter Course ID">
+        </div>
+        <div>
+            <label for="InstructorID" class="form-label fs-4 mt-3">Instructor ID</label>
+            <input type="text" class="form-control mb-3" name="InstructorID" placeholder="Enter Instructor ID">
+        </div>
 
-        <label for="InstructorID">Instructor ID:</label>
-        <input type="number" name="InstructorID" id="InstructorID" placeholder="Enter" required />
-
-        
-
-        <button>View Slots</button>
+        <button type="submit" class="btn btn-secondary mt-3">View Slots</button>
     </form>
 </div>
 
 
 
 
-<div id="right-area">
-<table class="table">
-    <thead>
-        <tr>
-            <th>Slot ID</th>
-            <th>Location</th>
-            <th>Time</th>
-            <th>Day</th>
-            <th>Course Name</th>
-            <th>Instructor Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var studentViewSlotResult in Model.StudentViewSlotList)
-        {
+@if(Model.isPosted){
+    <div id="right-area">
+        <table>
             <tr>
-                <td>@studentViewSlotResult.SlotId</td>
-                <td>@studentViewSlotResult.Location</td>
-                <td>@studentViewSlotResult.Time</td>
-                <td>@studentViewSlotResult.Day</td>
-                <td>@studentViewSlotResult.CourseName</td>
-                <td>@studentViewSlotResult.InstructorName</td>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Instructor ID</th>
+                <th>Instructor Name</th>
+                <th>Slot ID</th>
+                <th>Time</th>
+                <th>Day</th>
+                <th>Location</th>
             </tr>
-        }
-    </tbody>
-</table>
-</div>
+            @foreach (var CoursesSlotsInstructor in Model.StudentViewSlotList)
+            {
+                <tr>
+                    <td>@CoursesSlotsInstructor.course_id</td>
+                    <td>@CoursesSlotsInstructor.courseName</td>
+                    <td>@CoursesSlotsInstructor.instructorid</td>
+                    <td>@CoursesSlotsInstructor.instructor</td>
+                    <td>@CoursesSlotsInstructor.slot_id</td>
+                    <td>@CoursesSlotsInstructor.time</td>
+                    <td>@CoursesSlotsInstructor.day</td>
+                    <td>@CoursesSlotsInstructor.location</td>
+                </tr>
+            }
+        </table>
+    </div>
+}

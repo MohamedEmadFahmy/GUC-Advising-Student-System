@@ -7,6 +7,8 @@ namespace MyApp.Namespace
 {
     public class ChooseInstructorModel : PageModel
     {
+        public int studentId = 1;
+        public string message = "";
         public void OnGet()
         {
         }
@@ -24,9 +26,10 @@ namespace MyApp.Namespace
 
                 ChooseExam.CommandType = CommandType.StoredProcedure;
 
-                ChooseExam.Parameters.Add(new SqlParameter("@studentID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["studentID"])) });
-                ChooseExam.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["courseID"])) });
-                ChooseExam.Parameters.Add(new SqlParameter("@InstructorID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["InstructorID"])) });
+                ChooseExam.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = studentId });
+
+                ChooseExam.Parameters.Add(new SqlParameter("@CourseID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["CourseID"])) });
+                ChooseExam.Parameters.Add(new SqlParameter("@instrucorID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["InstructorID"])) });
                 ChooseExam.Parameters.Add(new SqlParameter("@current_semester_code", SqlDbType.NVarChar) { Value = (Request.Form["current_semester_code"]).ToString() });
 
 
@@ -36,11 +39,13 @@ namespace MyApp.Namespace
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+                // Console.WriteLine("Exception: " + ex.ToString());
+                // throw;
+                message = "Error choosing instructor";
             }
+            message = "Instructor chosen Succesfully";
         }
     }
 }

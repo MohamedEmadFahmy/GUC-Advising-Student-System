@@ -40,3 +40,10 @@ select dbo.FN_StudentUpcoming_installment(1)
 select dbo.FN_StudentUpcoming_installment(7)
 
 exec Procedures_AdminIssueInstallment 1
+
+
+select * from Student_Instructor_Course_take
+
+update Student_Instructor_Course_take
+set instructor_id = null
+where instructor_id is not null

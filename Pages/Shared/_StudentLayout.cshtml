@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown me-3">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Courses
                     </a>
                     <ul class="dropdown-menu custom-bg-black">
@@ -32,20 +32,20 @@
                         <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewAvailableCourses">View Available Courses</a></li>
                         <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewRequiredCourses">View Required Courses</a></li>
                         <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewMissingCourses">View Missing Courses</a></li>
-                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View All Courses</a></li>
-                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View Slots</a></li>
-                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Choose Instructor</a></li>
-                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View Couse Prerequisites</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewAllCourses">View All Courses</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewSlots">View Slots</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ChooseInstructor">Choose Instructor</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewCoursePrereqs">View Couse Prerequisites</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown me-3">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Exams
                     </a>
                     <ul class="dropdown-menu custom-bg-black">
-                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">View All Course Exams</a></li>
-                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Register First Makeup Exam</a></li>
-                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewOptionalCourses">Register Second Makeup Exam</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/ViewAllCoursesExams">View All Course Exams</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/RegisterFirstMakeup">Register First Makeup Exam</a></li>
+                        <li><a class="dropdown-item text-white" asp-area="" asp-page="/Student/RegisterSecondMakeup">Register Second Makeup Exam</a></li>
                     </ul>
                 </li>
                 <li class="nav-item me-3">
@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" asp-area="" asp-page="/Student/GraduationPlan">
                       Graduation Plan
                     </a>
                 </li>
