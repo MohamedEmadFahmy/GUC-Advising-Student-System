@@ -47,3 +47,5 @@ select * from Student_Instructor_Course_take
 update Student_Instructor_Course_take
 set instructor_id = null
 where instructor_id is not null
+
+select * from view_Course_prerequisites

@@ -4,36 +4,36 @@
     Layout = "/Pages/Shared/_StudentLayout.cshtml";
 }
 
-<h1>
-    Course Prerequisites
-</h1>
+<div id="right-area">
+    <h1>Course Prerequisites</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Course ID</th>
-            <th>Name</th>
-            <th>Major</th>
-            <th>Is Offered</th>
-            <th>Credit Hours</th>
-            <th>Semester</th>
-            <th>Prerequisite Course ID</th>
-            <th>Prerequisite Course Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var coursePrerequisites in Model.CoursePrerequisitesList)
-        {
+    <table>
+        <thead>
             <tr>
-                <td>@coursePrerequisites.course_id</td>
-                <td>@coursePrerequisites.name</td>
-                <td>@coursePrerequisites.major</td>
-                <td>@(coursePrerequisites.is_offered ? "Yes" : "No")</td>
-                <td>@coursePrerequisites.credit_hours</td>
-                <td>@coursePrerequisites.semester</td>
-                <td>@coursePrerequisites.prereq_courseid</td>
-                <td>@coursePrerequisites.prereq_coursename</td>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Prerequisite Course ID</th>
+                <th>Prerequisite Course Name</th>
+                <th>Major</th>
+                <th>Is Offered</th>
+                <th>Semester</th>
+                <th>Credit Hours</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var coursePrerequisites in Model.CoursePrerequisitesList)
+            {
+                <tr>
+                    <td>@coursePrerequisites.course_id</td>
+                    <td>@coursePrerequisites.name</td>
+                    <td>@coursePrerequisites.prereq_courseid</td>
+                    <td>@coursePrerequisites.prereq_coursename</td>
+                    <td>@coursePrerequisites.major</td>
+                    <td>@(coursePrerequisites.is_offered ? "Yes" : "No")</td>
+                    <td>@coursePrerequisites.semester</td>
+                    <td>@coursePrerequisites.credit_hours</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
