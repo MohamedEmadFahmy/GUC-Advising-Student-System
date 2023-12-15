@@ -87,16 +87,16 @@ namespace MyApp.Namespace
                 {
 
                     sendRequest.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar) { Value = "course" });
-                    sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32("1") });
-                    // sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CourseID"]) });
+                    // sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32("1") });
+                    sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CourseID"]) });
 
 
                 }
                 else
                 {
                     sendRequest.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar) { Value = "credit_hours" });
-                    sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32("15") });
-                    // sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CreditHours"]) });
+                    // sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32("15") });
+                    sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CreditHours"]) });
                 }
 
 
@@ -105,14 +105,15 @@ namespace MyApp.Namespace
 
 
                 // Task.Delay(3000);
-                // RedirectToPage("./Student/SendCourseRequest");
+                // RedirectToPage("./Student/SendRequest");
+                OnGet();
 
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+                // throw;
             }
         }
 
