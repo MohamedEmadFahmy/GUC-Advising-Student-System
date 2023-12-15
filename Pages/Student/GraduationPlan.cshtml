@@ -4,26 +4,21 @@
     Layout = "/Pages/Shared/_StudentLayout.cshtml";
 }
 
-<h1>
-    Student Graduation Plan
-</h1>
+<div id="right-area">
+    <h1>Graduation Plan</h1>
 
-
-<table class="table">
-    <thead>
+    <table>
         <tr>
             <th>Student ID</th>
             <th>Student Name</th>
             <th>Graduation Plan ID</th>
             <th>Course ID</th>
             <th>Course Name</th>
-            <th>Semester Code</th>
-            <th>Expected Graduation Date</th>
-            <th>Semester Credit Hours</th>
             <th>Advisor ID</th>
+            <th>Semester Code</th>
+            <th>Semester Credit Hours</th>
+            <th>Expected Graduation Date</th>
         </tr>
-    </thead>
-    <tbody>
         @foreach (var studentViewGPResult in Model.StudentViewGPList)
         {
             <tr>
@@ -32,11 +27,11 @@
                 <td>@studentViewGPResult.graduation_Plan_Id</td>
                 <td>@studentViewGPResult.Course_id</td>
                 <td>@studentViewGPResult.Course_name</td>
-                <td>@studentViewGPResult.Semester_code</td>
-                <td>@studentViewGPResult.expected_grad_date?.ToString("dd/MM/yyyy")</td>
-                <td>@studentViewGPResult.Semester_credit_hours</td>
                 <td>@studentViewGPResult.advisor_id</td>
+                <td>@studentViewGPResult.Semester_code</td>
+                <td>@studentViewGPResult.Semester_credit_hours</td>
+                <td>@studentViewGPResult.expected_grad_date?.ToString("dd/MM/yyyy")</td>
             </tr>
         }
-    </tbody>
-</table>
+    </table>
+</div>
