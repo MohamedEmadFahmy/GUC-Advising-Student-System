@@ -7,6 +7,7 @@ namespace DataBaseMs3.Pages.Admin
 {
     public class AdminModel : PageModel
     {
+        public string Message { get; set; } = "";
         public void OnGet()
         {
         }
@@ -26,7 +27,7 @@ namespace DataBaseMs3.Pages.Admin
                 DeleteCourse.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["coursename"]) });
 
                 DeleteCourse.ExecuteNonQuery();
-
+                Message = "Course Deleted successfully!";
                 connection.Close();
 
                 

@@ -7,6 +7,7 @@ namespace DataBaseMs3.Pages.Admin
 {
     public class AdminDeleteSlotModel : PageModel
     {
+        public string Message { get; set; } = "";
         public void OnGet()
         {
         }
@@ -26,7 +27,7 @@ namespace DataBaseMs3.Pages.Admin
                 DeleteSlot.Parameters.Add(new SqlParameter("@current_semester", SqlDbType.NVarChar) { Value = (Request.Form["currentsemester"]).ToString() });
 
                 DeleteSlot.ExecuteNonQuery();
-
+                Message = "Slot Deleted successfully!";
                 connection.Close();
 
 

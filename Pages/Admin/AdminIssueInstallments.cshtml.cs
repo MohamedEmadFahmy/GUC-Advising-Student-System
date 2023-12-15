@@ -7,6 +7,7 @@ namespace DataBaseMs3.Pages.Admin
 {
     public class AdminIssueInstallmentsModel : PageModel
     {
+        public string Message { get; set; } = "";
         public void OnGet()
         {
         }
@@ -26,7 +27,7 @@ namespace DataBaseMs3.Pages.Admin
                 IssueInstallment.Parameters.Add(new SqlParameter("@payment_id", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["paymentid"])) });
 
                 IssueInstallment.ExecuteNonQuery();
-
+                Message = "Installments Issued Successfully!";
                 connection.Close();
 
 

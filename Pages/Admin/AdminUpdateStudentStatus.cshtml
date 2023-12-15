@@ -9,5 +9,19 @@
 
 <form method="Post">
     <input type="number" name="studentid" placeholder="Student ID" required />
-    <button>Update Status</button>
+    <button id="submitbutton">Update Status</button>
 </form>
+
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+}
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    }
+</script>

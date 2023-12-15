@@ -10,5 +10,19 @@
 
 <form method="Post">
     <input type="number" name="coursename" placeholder="Course ID" required/>
-    <button>Delete Course</button>
+    <button id="submitbutton">Delete Course</button>
 </form>
+
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+}
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    }
+</script>

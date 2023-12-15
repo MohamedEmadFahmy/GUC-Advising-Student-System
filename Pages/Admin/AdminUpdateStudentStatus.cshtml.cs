@@ -7,6 +7,7 @@ namespace DataBaseMs3.Pages.Admin
 {
     public class AdminUpdateStudentStatusModel : PageModel
     {
+        public string Message { get; set; } = "";
         public void OnGet()
         {
         }
@@ -25,7 +26,7 @@ namespace DataBaseMs3.Pages.Admin
                 updateStatus.Parameters.Add(new SqlParameter("@student_id", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["studentid"]) });
 
                 updateStatus.ExecuteNonQuery();
-
+                Message = "Status updated successfully!";
                 connection.Close();
 
 

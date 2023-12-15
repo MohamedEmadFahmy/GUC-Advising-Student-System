@@ -8,6 +8,7 @@ namespace DataBaseMs3.Pages.Admin
 {
     public class AdminAddExamModel : PageModel
     {
+        public string Message { get; set; } = "";
         public void OnGet()
         {
         }
@@ -28,7 +29,7 @@ namespace DataBaseMs3.Pages.Admin
                 AddExam.Parameters.Add(new SqlParameter("@date", SqlDbType.DateTime) { Value = DateTime.Parse((Request.Form["date"])) });
                 AddExam.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["courseID"])) });
                 AddExam.ExecuteNonQuery();
-
+                Message = "Exam Added Successfully!";
                 connection.Close();
 
 

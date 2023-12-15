@@ -10,5 +10,19 @@
     <input type="text" name="type" placeholder="Type" required />
     <input type="datetime" name="date" placeholder="Date" required />
     <input type="number" name="courseID" placeholder="Course ID" required />
-    <button>Add Exam</button>
+    <button id="submitbutton">Add Exam</button>
 </form>
+
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+}
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    }
+</script>

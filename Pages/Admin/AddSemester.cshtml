@@ -1,0 +1,26 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminAddingSemesterModel
+@{
+}
+
+<h1>Admin Add Semester</h1>
+
+<form method="post">
+    <input type="date" name="start_date" placeholder="Start Date" required />
+    <input type="date" name="end_date" placeholder="End Date" required />
+    <input type="text" name="semester_code" placeholder="Semester Code" required />
+    <button>Add Semester</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+}
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    }
+</script>
