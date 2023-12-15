@@ -1,4 +1,24 @@
 ﻿@page
 @model MyApp.Namespace.RegisterSecondMakeupModel
 @{
+    Layout = "/Pages/Shared/_StudentLayout.cshtml";
+
 }
+<h1>Register for Second Makeup</h1>
+
+<form method="Post">
+    <label for="studentID">Student ID:</label>
+    <input type="number" name="studentID" id="studentID" placeholder="0" required />
+
+    <label for="courseID">Course ID:</label>
+    <input type="number" name="courseID" id="courseID" placeholder="Enter" required />
+
+
+    <label for="Student_Current_Semester">Student Current Semester:</label>
+    <input type="text" name="Student_Current_Semester" id="Student_Current_Semester" placeholder="Enter" required />
+
+
+
+
+    <button>Register</button>
+</form>

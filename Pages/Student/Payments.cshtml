@@ -8,13 +8,21 @@
     Student Upcoming Installments
 </h1>
 
-<h1>Installment Deadline</h1>
-
-@if(Model.Installment_deadline.Length > 0){
-    <h1>@Model.Installment_deadline</h1>
-
-}
-else{
-    <h1>All Clear!</h1>
-
-}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Installment Deadline</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+       
+            <tr>
+                <td>
+                        @Model.Installment_deadline
+             
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
