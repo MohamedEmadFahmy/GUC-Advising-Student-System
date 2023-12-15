@@ -69,7 +69,7 @@ namespace MyApp.Namespace
 
                 connection.Open();
 
-                if (string.IsNullOrEmpty(Request.Form["CourseID"].ToString()) || !string.IsNullOrEmpty(Request.Form["CreditHours"].ToString()))
+                if (string.IsNullOrEmpty(Request.Form["CourseID"].ToString()) && !string.IsNullOrEmpty(Request.Form["CreditHours"].ToString()))
                 {
                     isCourseRequest = false;
                 }
@@ -103,9 +103,6 @@ namespace MyApp.Namespace
                 sendRequest.ExecuteNonQuery();
                 connection.Close();
 
-
-                // Task.Delay(3000);
-                // RedirectToPage("./Student/SendRequest");
                 OnGet();
 
 

@@ -35,3 +35,8 @@ select * from Request
 
 delete from Request where type = 'on'
 delete from Request where request_id >= 15
+
+select dbo.FN_StudentUpcoming_installment(1)
+select dbo.FN_StudentUpcoming_installment(7)
+
+exec Procedures_AdminIssueInstallment 1

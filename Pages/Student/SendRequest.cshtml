@@ -79,7 +79,7 @@
                 <td>@request.comment</td>
                 <td>@request.status</td>
                 @if(@request.creditHours == "None"){
-                    <td class="bg-danger">@request.creditHours</td>
+                    <td class="bg-danger" >@request.creditHours</td>
                 }
                 else{
                     <td>@request.creditHours</td>
@@ -101,7 +101,7 @@
 
 
 <script>
-        // JavaScript to show/hide the Credit Hours input based on the selected Type
+    // JavaScript to show/hide the Credit Hours input based on the selected Type
     document.addEventListener('DOMContentLoaded', function () {
         const creditHoursTypeRadio = document.getElementById('creditHoursType');
         const courseTypeRadio = document.getElementById('courseType');

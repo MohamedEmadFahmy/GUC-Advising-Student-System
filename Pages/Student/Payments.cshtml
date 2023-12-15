@@ -1,4 +1,20 @@
 ﻿@page
 @model MyApp.Namespace.PaymentsModel
 @{
+    Layout = "/Pages/Shared/_StudentLayout.cshtml";
+}
+
+<h1>
+    Student Upcoming Installments
+</h1>
+
+<h1>Installment Deadline</h1>
+
+@if(Model.Installment_deadline.Length > 0){
+    <h1>@Model.Installment_deadline</h1>
+
+}
+else{
+    <h1>All Clear!</h1>
+
 }

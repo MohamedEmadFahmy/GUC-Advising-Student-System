@@ -7,6 +7,7 @@ namespace MyApp.Namespace
 {
     public class ViewRequiredCoursesModel : PageModel
     {
+        public int studentId = 1;
         public List<Course> Courses = new List<Course>();
         public bool isPosted = false;
         public void OnGet()
@@ -29,7 +30,8 @@ namespace MyApp.Namespace
                     cmd.CommandType = CommandType.StoredProcedure;
 
 
-                    cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"]) });
+                    // cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"]) });
+                    cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = studentId });
 
                     cmd.Parameters.Add(new SqlParameter("@current_semester_code", SqlDbType.NVarChar) { Value = Request.Form["SemesterCode"].ToString() });
 
@@ -54,7 +56,7 @@ namespace MyApp.Namespace
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+                // throw;
             }
 
         }
