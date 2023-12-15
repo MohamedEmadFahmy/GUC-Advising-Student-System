@@ -81,6 +81,7 @@ a {
     justify-content: center;
     border-radius: 30px;
     text-align: center;
+    flex-direction: column;
 }
 
 #left-area input {
@@ -91,6 +92,11 @@ a {
     background-color: orange;
     margin-top: 2vh;
     margin-bottom: 2vh;
+}
+#left-area h1 {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: red;
 }
 
 #right-area {
@@ -166,5 +172,12 @@ tr:hover {
 #left-area .form-check-input[type="radio"] {
     width: 1.2em;
     height: 1.2em;
+}
+
+#student-info{
+    width: 40vw;
+    height: 70vh;
+    background-color: black;
+    color: white;
 }
 

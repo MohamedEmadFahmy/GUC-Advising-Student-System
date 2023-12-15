@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
@@ -7,103 +8,68 @@ namespace MyApp.Namespace
 {
     public class StudentRegisterModel : PageModel
     {
-        public Student s = new Student();
-
         public string errorMessage = "";
         public string successMessage = "";
+        public int studentId;
 
         public void OnGet()
         {
         }
+
         public void OnPost()
         {
+            // No need for a Student class, use local variables
 
-            s.email = Request.Form["firstName"];
-            s.password = Request.Form["password"];
-            s.firstName = Request.Form["firstName"];
-            s.lastName = Request.Form["lastName"];
-            s.faculty = Request.Form["faculty"];
-            s.major = Request.Form["major"];
-            int semester;
-            if (int.TryParse(Request.Form["semester"], out semester))
-            {
-                s.semester = semester;
-            }
-            else
-            {
-                errorMessage = "invalid semester";
-                return;
-            }
+            string email = Request.Form["email"];
+            string password = Request.Form["password"];
+            string firstName = Request.Form["firstName"];
+            string lastName = Request.Form["lastName"];
+            string faculty = Request.Form["faculty"];
+            string major = Request.Form["major"];
+            int semester = Convert.ToInt32(Request.Form["semester"]);
 
-
-            // save the data to the database
-
+            // Save the data to the database
             try
             {
-                String connectionString = "Data Source=.\\sqlexpress;" +
+                string connectionString = "Data Source=.\\sqlexpress;" +
                     "Initial Catalog=Advising_System;" +
                     "Integrated Security=True;" +
                     "Encrypt=False";
 
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand loginProc = new SqlCommand("Procedures_StudentRegistration", connection))
+                    {
+                        loginProc.CommandType = CommandType.StoredProcedure;
 
-                SqlConnection connection = new SqlConnection(connectionString);
+                        // Add parameters based on the expected parameters of your stored procedure
+                        loginProc.Parameters.Add(new SqlParameter("@first_name", SqlDbType.NVarChar) { Value = firstName });
+                        loginProc.Parameters.Add(new SqlParameter("@last_name", SqlDbType.NVarChar) { Value = lastName });
+                        loginProc.Parameters.Add(new SqlParameter("@password", SqlDbType.NVarChar) { Value = password });
+                        loginProc.Parameters.Add(new SqlParameter("@faculty", SqlDbType.NVarChar) { Value = faculty });
+                        loginProc.Parameters.Add(new SqlParameter("@email", SqlDbType.NVarChar) { Value = email });
+                        loginProc.Parameters.Add(new SqlParameter("@major", SqlDbType.NVarChar) { Value = major });
+                        loginProc.Parameters.Add(new SqlParameter("@semester", SqlDbType.Int) { Value = semester });
 
+                        SqlParameter result = new SqlParameter("@Student_id", SqlDbType.Int);
+                        result.Direction = ParameterDirection.Output;
+                        loginProc.Parameters.Add(result);
 
+                        connection.Open();
+                        loginProc.ExecuteNonQuery();
 
-                SqlCommand loginProc = new SqlCommand("Procedures_StudentRegistration ", connection);
+                        studentId = Convert.ToInt32(result.Value);
 
+                        connection.Close();
 
-                loginProc.CommandType = CommandType.StoredProcedure;
-
-                // Add parameters based on the expected parameters of your stored procedure
-                loginProc.Parameters.Add(new SqlParameter("@first_name", SqlDbType.NVarChar) { Value = s.firstName });
-                loginProc.Parameters.Add(new SqlParameter("@last_name", SqlDbType.NVarChar) { Value = s.lastName });
-                loginProc.Parameters.Add(new SqlParameter("@password", SqlDbType.NVarChar) { Value = s.password });
-                loginProc.Parameters.Add(new SqlParameter("@faculty", SqlDbType.NVarChar) { Value = s.faculty });
-                loginProc.Parameters.Add(new SqlParameter("@email", SqlDbType.NVarChar) { Value = s.email });
-                loginProc.Parameters.Add(new SqlParameter("@major", SqlDbType.NVarChar) { Value = s.major });
-                loginProc.Parameters.Add(new SqlParameter("@semester", SqlDbType.Int) { Value = s.semester });
-
-                SqlParameter result = new SqlParameter("@Student_id", SqlDbType.Int);
-                result.Direction = ParameterDirection.Output;
-                loginProc.Parameters.Add(result);
-
-
-                connection.Open();
-                loginProc.ExecuteNonQuery();
-
-                s = new Student();
-
-                s.id = Convert.ToInt32(result.Value);
-
-                connection.Close();
-
-
-
+                        successMessage = "Student Registration Successful. Student ID: " + studentId;
+                    }
+                }
             }
             catch (Exception ex)
             {
                 errorMessage = ex.Message;
-                return;
             }
-
-
-            successMessage = "Student Registration Successful";
-
-
         }
     }
-
-    public class Student
-    {
-        public string email;
-        public string password;
-        public string firstName;
-        public string lastName;
-        public string faculty;
-        public string major;
-        public int semester;
-        public int id;
-    }
-
 }

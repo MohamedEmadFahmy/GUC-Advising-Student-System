@@ -7,6 +7,8 @@ namespace MyApp.Namespace
 {
     public class RegisterFirstMakeupModel : PageModel
     {
+        public int studentId = 9;
+        public string message = "";
         public void OnGet()
         {
         }
@@ -14,7 +16,6 @@ namespace MyApp.Namespace
         {
             try
             {
-
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True;Encrypt=False";
                 SqlConnection connection = new SqlConnection(connectionString);
 
@@ -24,22 +25,22 @@ namespace MyApp.Namespace
 
                 Register.CommandType = CommandType.StoredProcedure;
 
-                Register.Parameters.Add(new SqlParameter("@studentID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["studentID"])) });
-                Register.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["courseID"])) });
-                Register.Parameters.Add(new SqlParameter("@Student_Current_Semester", SqlDbType.NVarChar) { Value = (Request.Form["Student_Current_Semester"]).ToString() });
+                Register.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = studentId });
 
+                Register.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["courseID"]) });
+                Register.Parameters.Add(new SqlParameter("@studentCurr_sem", SqlDbType.NVarChar) { Value = Request.Form["Student_Current_Semester"].ToString() });
 
                 Register.ExecuteNonQuery();
 
                 connection.Close();
-
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+                // throw;
+                message = "Error while registering for First Makeup";
             }
+            message = "Register for First Makeup Successful";
         }
     }
 }

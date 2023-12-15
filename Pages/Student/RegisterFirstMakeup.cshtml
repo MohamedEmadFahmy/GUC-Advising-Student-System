@@ -4,21 +4,37 @@
     Layout = "/Pages/Shared/_StudentLayout.cshtml";
 
 }
-<h1>Register for First Makeup</h1>
 
-<form method="Post">
-    <label for="studentID">Student ID:</label>
-    <input type="number" name="studentID" id="studentID" placeholder="0" required />
+<div id="left-area">
+    <h1>First Makeup</h1>
 
-    <label for="courseID">Course ID:</label>
-    <input type="number" name="courseID" id="courseID" placeholder="Enter" required />
- 
+    <form method="Post">
 
-    <label for="Student_Current_Semester">Student Current Semester:</label>
-    <input type="text" name="Student_Current_Semester" id="Student_Current_Semester" placeholder="Enter" required />
+        <label for="courseID" class="form-label fs-4 mt-3">Course ID:</label>
+        <input type="number" class="form-control mb-3" name="courseID" id="courseID" placeholder="Enter Course ID" value="1" required />
+
+        <label for="Student_Current_Semester" class="form-label fs-4 mt-3">Student Current Semester:</label>
+        <input type="text" class="form-control mb-3" name="Student_Current_Semester" id="Student_Current_Semester" placeholder="Enter Semester Code" value="S23" required/>
+
+        <button type="submit" class="btn btn-secondary mt-3">Register</button>
+    </form>
+</div>
 
 
+<script>
+    const form = document.querySelector("form");
 
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    <button>Register</button>
-</form>
+        form.submit();
+
+        showResult();
+
+    });
+
+    function showResult() {
+        alert("@Model.message");
+    }
+
+</script>

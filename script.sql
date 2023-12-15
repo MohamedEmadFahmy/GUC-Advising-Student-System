@@ -49,3 +49,7 @@ set instructor_id = null
 where instructor_id is not null
 
 select * from view_Course_prerequisites
+
+select * from Exam_Student
+
+select * from MakeUp_Exam
