@@ -32,3 +32,5 @@ VALUES
 
 
 select * from Request
+
+delete from Request where type = 'on'

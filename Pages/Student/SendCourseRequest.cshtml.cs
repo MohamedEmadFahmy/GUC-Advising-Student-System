@@ -57,6 +57,58 @@ namespace MyApp.Namespace
                 throw;
             }
         }
+
+
+        public void OnPost()
+        {
+            try
+            {
+
+                String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
+                SqlConnection connection = new SqlConnection(connectionString);
+
+                connection.Open();
+
+                string sql = isCourseRequest ? "Procedures_StudentSendingCourseRequest" : "Procedures_StudentSendingCHRequest";
+                SqlCommand sendRequest = new SqlCommand(sql, connection);
+                sendRequest.CommandType = CommandType.StoredProcedure;
+
+
+                sendRequest.Parameters.Add(new SqlParameter("@comment", SqlDbType.NVarChar) { Value = Request.Form["Comment"].ToString() });
+
+                sendRequest.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.NVarChar) { Value = studentId });
+
+                if (isCourseRequest)
+                {
+
+                    sendRequest.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar) { Value = "course" });
+                    sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["courseID"])) });
+
+
+                }
+                else
+                {
+                    sendRequest.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar) { Value = "credit_hours" });
+                    sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CreditHours"]) });
+                }
+
+
+                sendRequest.ExecuteNonQuery();
+                connection.Close();
+
+
+                // Task.Delay(3000);
+                RedirectToPage("./Student/SendCourseRequest");
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.ToString());
+                throw;
+            }
+        }
+
     }
 
     public class Request
