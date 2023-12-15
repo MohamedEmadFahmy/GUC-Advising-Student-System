@@ -69,6 +69,11 @@ namespace MyApp.Namespace
 
                 connection.Open();
 
+                if (string.IsNullOrEmpty(Request.Form["CourseID"].ToString()) || !string.IsNullOrEmpty(Request.Form["CreditHours"].ToString()))
+                {
+                    isCourseRequest = false;
+                }
+
                 string sql = isCourseRequest ? "Procedures_StudentSendingCourseRequest" : "Procedures_StudentSendingCHRequest";
                 SqlCommand sendRequest = new SqlCommand(sql, connection);
                 sendRequest.CommandType = CommandType.StoredProcedure;
@@ -82,14 +87,16 @@ namespace MyApp.Namespace
                 {
 
                     sendRequest.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar) { Value = "course" });
-                    sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32((Request.Form["courseID"])) });
+                    sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32("1") });
+                    // sendRequest.Parameters.Add(new SqlParameter("@courseID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CourseID"]) });
 
 
                 }
                 else
                 {
                     sendRequest.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar) { Value = "credit_hours" });
-                    sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CreditHours"]) });
+                    sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32("15") });
+                    // sendRequest.Parameters.Add(new SqlParameter("@credit_hours", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["CreditHours"]) });
                 }
 
 
@@ -98,7 +105,7 @@ namespace MyApp.Namespace
 
 
                 // Task.Delay(3000);
-                RedirectToPage("./Student/SendCourseRequest");
+                // RedirectToPage("./Student/SendCourseRequest");
 
 
             }

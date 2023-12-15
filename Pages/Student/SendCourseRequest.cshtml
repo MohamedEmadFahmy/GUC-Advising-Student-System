@@ -111,15 +111,19 @@
         creditHoursTypeRadio.addEventListener('change', function () {
             creditHoursInput.style.display = creditHoursTypeRadio.checked ? 'block' : 'none';
             courseIdInput.style.display = !creditHoursTypeRadio.checked ? 'block' : 'none';
-            @Model.isCourseRequest = false;
-            console.log(@Model.isCourseRequest);
+
+            if(creditHoursTypeRadio.checked){
+                courseIdInput.value = "";
+            }
         });
 
         courseTypeRadio.addEventListener('change', function () {
             creditHoursInput.style.display = courseTypeRadio.checked ? 'none' : 'block';
             courseIdInput.style.display = !courseTypeRadio.checked ? 'none' : 'block';
-            @Model.isCourseRequest = true;
-            console.log(@Model.isCourseRequest);
+            
+            if(courseTypeRadio.checked){
+                creditHoursInput.value = "";
+            }
         });
     });
 </script>

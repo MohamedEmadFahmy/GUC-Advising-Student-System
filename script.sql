@@ -34,3 +34,4 @@ VALUES
 select * from Request
 
 delete from Request where type = 'on'
+delete from Request where request_id >= 15
