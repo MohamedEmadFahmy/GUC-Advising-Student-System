@@ -4,32 +4,32 @@
     Layout = "/Pages/Shared/_StudentLayout.cshtml";
 }
 
-<h1>
-    Makeup Exams
-</h1>
+<div id="right-area">
+    <h1>All Courses Exams</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Exam ID</th>
-            <th>Date</th>
-            <th>Type</th>
-            <th>Course ID</th>
-            <th>Name</th>
-            <th>Semester</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var makeupExam in Model.MakeupExams)
-        {
+    <table>
+        <thead>
             <tr>
-                <td>@makeupExam.examid</td>
-                <td>@makeupExam.date.ToString("yyyy-MM-dd")</td>
-                <td>@makeupExam.type</td>
-                <td>@makeupExam.courseid</td>
-                <td>@makeupExam.name</td>
-                <td>@makeupExam.semester</td>
+                <th>Exam ID</th>
+                <th>Type</th>
+                <th>Course ID</th>
+                <th>Name</th>
+                <th>Semester</th>
+                <th>Date</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var makeupExam in Model.MakeupExams)
+            {
+                <tr>
+                    <td>@makeupExam.examid</td>
+                    <td>@makeupExam.type</td>
+                    <td>@makeupExam.courseid</td>
+                    <td>@makeupExam.name</td>
+                    <td>@makeupExam.semester</td>
+                    <td>@makeupExam.date.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
