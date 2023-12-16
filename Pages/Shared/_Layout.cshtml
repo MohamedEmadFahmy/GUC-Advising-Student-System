@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DataBaseMs3</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DataBaseMs3.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" asp-page="/Index">Admin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown text-white">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                View
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminViewActiveStudents">View Active Students</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminViewAllSemesters">View All Semesters</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminViewStudentTranscript">View All Student Transcripts</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminViewGradPlans">View All Graduation Plans</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminViewPayments">View All Payments</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/ListAdvisors">View All Advisors</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/ListStudentsWithAdvisors">View All Students with their corresponding advisors</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/ViewPendingRequests">View All all pending requests</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/InstructorsAssignedCourses">View All Instructors along with their assigned courses</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Add
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminAddExam">Add Exam</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AddSemester">Add Semester</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminAddCourse">Add Course</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Link
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminLinkInstructor">Link instructor</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminLinkStudentToAdvisor">Link a student to an advisor</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminLinkStudentToCourse">Link a student to a course</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Delete
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminDeleteCourse">Delete Course</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminDeleteSlot">Delete Slot</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Other
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminUpdateStudentStatus">Update student status</a></li>
+                                <li><a class="dropdown-item" asp-page="/Admin/AdminIssueInstallments">Issue installments</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="">
+            &copy; 2023 - DataBaseMs3 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

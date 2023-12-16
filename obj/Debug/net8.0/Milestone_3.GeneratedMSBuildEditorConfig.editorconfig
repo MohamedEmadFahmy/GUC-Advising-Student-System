@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Semester 5\Databases 1\Project\Milestone 3 .netcore\Milestone_3
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AddSemester.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRkU2VtZXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -129,3 +133,7 @@ build_metadata.AdditionalFiles.CssScope = b-fkln9uxg7q
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Register/StudentRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJcU3R1ZGVudFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-mom0maawyx
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-lgriwpwnbu

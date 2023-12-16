@@ -26,20 +26,19 @@
     </form>
 </div>
 
+@if (Model.message.Length > 0)
+{
+    <div class="alert alert-success" role="alert">
+        @Model.message
+    </div>
+}
+
 <script>
-    const form = document.querySelector("form");
 
-    form.addEventListener("submit", function (event) {
+    @* const myButton = document.querySelector("button");
+
+    myButton.addEventListener("click", function (event) {
         event.preventDefault();
-
-        form.submit();
-
-        showResult();
-
-    });
-
-    function showResult() {
-        alert("@Model.message");
-    }
+    }); *@
 
 </script>

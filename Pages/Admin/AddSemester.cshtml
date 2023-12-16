@@ -1,0 +1,27 @@
+﻿@page
+@model MyApp.Namespace.Admin.AdminAddingSemesterModel
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Admin Add Semester</h1>
+
+<form method="post">
+    <input type="date" name="start_date" placeholder="Start Date" value = "2003-09-04" required />
+    <input type="date" name="end_date" placeholder="End Date" value = "2023-12-16" required />
+    <input type="text" name="semester_code" placeholder="Semester Code" value="S600" required />
+    <button id="submitButton">Add Semester</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+}
+
+<script>
+    @* document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    } *@
+</script>

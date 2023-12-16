@@ -79,3 +79,4 @@ D:\Semester 5\Databases 1\Project\Milestone 3 .netcore\Milestone_3\obj\Debug\net
 D:\Semester 5\Databases 1\Project\Milestone 3 .netcore\Milestone_3\obj\Debug\net8.0\scopedcss\Pages\Login\StudentLogin.cshtml.rz.scp.css
 D:\Semester 5\Databases 1\Project\Milestone 3 .netcore\Milestone_3\obj\Debug\net8.0\scopedcss\Pages\Login\AdvisorLogin.cshtml.rz.scp.css
 D:\Semester 5\Databases 1\Project\Milestone 3 .netcore\Milestone_3\obj\Debug\net8.0\Milestone_3.sourcelink.json
+D:\Semester 5\Databases 1\Project\Milestone 3 .netcore\Milestone_3\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css

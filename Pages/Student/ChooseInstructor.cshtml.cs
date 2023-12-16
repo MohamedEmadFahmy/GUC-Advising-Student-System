@@ -11,6 +11,7 @@ namespace MyApp.Namespace
         public string message = "";
         public void OnGet()
         {
+            message = "no message yet";
         }
         public void OnPost()
         {
@@ -42,8 +43,8 @@ namespace MyApp.Namespace
             catch (Exception)
             {
                 // Console.WriteLine("Exception: " + ex.ToString());
-                // throw;
                 message = "Error choosing instructor";
+                throw;
             }
             message = "Instructor chosen Succesfully";
         }
