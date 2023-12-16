@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9DTFhsbZ4DjJIwvDDS18Cm5mZdmJXXTG1g/uWEqIUgg=",
+  "Hash": "7MALY6I2xztIE1oYVRTiuH/mu9zfj+86LPJ2PsxrebU=",
   "Source": "Milestone_3",
   "BasePath": "_content/Milestone_3",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Semester 5\\Databases 1\\Project\\Milestone 3 .netcore\\Milestone_3\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Milestone_3.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Semester 5\\Databases 1\\Project\\Milestone 3 .netcore\\Milestone_3\\wwwroot\\css\\login.css",
+      "SourceId": "Milestone_3",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Semester 5\\Databases 1\\Project\\Milestone 3 .netcore\\Milestone_3\\wwwroot\\",
+      "BasePath": "_content/Milestone_3",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "D:\\Semester 5\\Databases 1\\Project\\Milestone 3 .netcore\\Milestone_3\\wwwroot\\css\\site.css",

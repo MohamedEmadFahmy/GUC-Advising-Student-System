@@ -11,7 +11,6 @@ namespace MyApp.Namespace
         public string message = "";
         public void OnGet()
         {
-            message = "no message yet";
         }
         public void OnPost()
         {

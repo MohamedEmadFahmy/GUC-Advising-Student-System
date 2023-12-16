@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#mainContent {
+    /* width: 20.833vw;
+    min-height: 37.037vh; */
+
+
+    width: 35vw;
+    height: 65vh;
+
+    
+    /* background-color: red; */
+    background-color: rgb(49, 49, 49);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 30px;
+    text-align: center;
+}
+
+#mainContent input {
+    width: 11.458vw;
+}
+#mainContent button[type="submit"] {
+    background-color: orange;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+#mainContent .form-check-input[type="radio"] {
+    width: 1.2em;
+    height: 1.2em;
+}

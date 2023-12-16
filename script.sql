@@ -53,3 +53,5 @@ select * from view_Course_prerequisites
 select * from Exam_Student
 
 select * from MakeUp_Exam
+
+select * from Student

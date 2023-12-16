@@ -20,21 +20,16 @@
     </form>
 </div>
 
-
-<script>
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        form.submit();
-
-        showResult();
-
-    });
-
-    function showResult() {
-        alert("@Model.message");
+@if (Model.message.Length > 0)
+{   
+    if(Model.message.Equals("Register for First Makeup Successful")){
+        <div class="alert alert-success" role="alert">
+            @Model.message
+        </div>
     }
-
-</script>
+    else{
+        <div class="alert alert-danger" role="alert">
+            @Model.message
+        </div>
+    }
+}

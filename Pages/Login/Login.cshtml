@@ -1,10 +1,11 @@
 ﻿@page
 @model Milestone_3.Pages.LoginModel
 @{
+    Layout = null;
 }
 
 
-<br>
+@* <br>
 <h1>Instructors</h1>
 
 <table class="table">
@@ -29,4 +30,99 @@
             </tr>
         }
     </tbody>
-</table>
+</table> *@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+</head>
+<body>
+    
+    <div id="mainContent">
+        <form method="post">
+            @* <label for="StudentID" class="form-label fs-4 mt-3">Student ID</label>
+            <input type="text" class="form-control mb-3" name="StudentID" placeholder="Enter Student ID"> *@
+
+            @* <label class="form-label fs-4 mt-3">Type of Request</label> *@
+            <div id="radiobuttons">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Type" id="student" value="Student" checked>
+                    <label class="form-check-label" for="student">
+                        Student
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Type" id="advisor" value="Advisor">
+                    <label class="form-check-label" for="advisor">
+                        Advisor
+                    </label>
+                </div>
+            </div>
+
+            <div id="StudentIdInput">
+                <label for="StudentID" class="form-label fs-4 mt-3">Student ID</label>
+                <input type="text" class="form-control mb-3" name="StudentID" placeholder="Enter Student ID" value="1">
+            </div>
+            
+
+            <div id="creditHoursInput" style="display: none;">
+                <label for="AdvisorID" class="form-label fs-4 mt-3">Advisor ID</label>
+                <input type="text" class="form-control mb-3" name="AdvisorID" placeholder="Enter Advisor ID" value="1">
+            </div>
+
+            <label for="password" class="form-label fs-4 mt-3">Password</label>
+            <input type="text" class="form-control mb-3" name="password" placeholder="Enter Password" value="password123">
+
+
+
+            <button type="submit" class="btn btn-secondary mt-3">Submit</button>
+        </form>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const studentRadio = document.getElementById('student');
+            const advisorRadio = document.getElementById('advisor');
+            const studentIdInput = document.getElementById('StudentIdInput');
+            const advisorIdInput = document.getElementById('creditHoursInput');
+            const passwordInput = document.getElementById('password');
+
+            studentRadio.addEventListener('change', function () {
+                studentIdInput.style.display = studentRadio.checked ? 'block' : 'none';
+                advisorIdInput.style.display = !studentRadio.checked ? 'block' : 'none';
+
+                if (studentRadio.checked) {
+                    advisorIdInput.value = "";
+                }
+            });
+
+            advisorRadio.addEventListener('change', function () {
+                advisorIdInput.style.display = advisorRadio.checked ? 'block' : 'none';
+                studentIdInput.style.display = !advisorRadio.checked ? 'block' : 'none';
+
+                if (advisorRadio.checked) {
+                    studentIdInput.value = "";
+                }
+            });
+        });
+    </script>
+
+    
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+</body>
+</html>
+
+
