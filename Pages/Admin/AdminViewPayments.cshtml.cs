@@ -40,8 +40,8 @@ namespace DataBaseMs3.Pages.Admin
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+                //Console.WriteLine("Exception: " + ex.ToString());
+                Message = "Error";
             }
         }
     }
