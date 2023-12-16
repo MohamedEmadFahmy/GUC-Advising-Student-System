@@ -37,8 +37,8 @@ public class SemestersOfferedCoursesModel : PageModel
 		}
 		catch (Exception ex)
 		{
-			Console.WriteLine("Exception: " + ex.ToString());
-			throw;
+			//Console.WriteLine("Exception: " + ex.ToString());
+                Message = "Error";
 		}
 	}
 }
