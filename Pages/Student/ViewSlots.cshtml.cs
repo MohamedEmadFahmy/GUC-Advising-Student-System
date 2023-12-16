@@ -15,9 +15,16 @@ namespace MyApp.Namespace
 
         public bool isPosted = false;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
             isPosted = false;
+
+            if (HttpContext.Session.GetInt32("student_id") == null)
+            {
+                return RedirectToPage("../Login/Login");
+            }
+
+            return Page();
 
         }
         public void OnPost()

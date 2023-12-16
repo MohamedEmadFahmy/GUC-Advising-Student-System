@@ -9,10 +9,16 @@ namespace MyApp.Namespace
     public class PaymentsModel : PageModel
     {
         public DateTime Installment_deadline;
-        public int stud_id = 1;
+        public int? studentId;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (!studentId.HasValue)
+            {
+                return RedirectToPage("../Login/Login");
+            }
             try
             {
                 string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True;Encrypt=False";
@@ -22,7 +28,7 @@ namespace MyApp.Namespace
                     string sql = "SELECT dbo.FN_StudentUpcoming_installment(@student_ID) AS Installment_deadline";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@student_ID", SqlDbType.Int) { Value = Convert.ToInt32(stud_id) });
+                        command.Parameters.Add(new SqlParameter("@student_ID", SqlDbType.Int) { Value = Convert.ToInt32(studentId) });
 
 
                         var result = command.ExecuteScalar();
@@ -39,6 +45,7 @@ namespace MyApp.Namespace
                 Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
+            return Page();
         }
     }
 

@@ -11,8 +11,14 @@ namespace MyApp.Namespace
     {
         public List<MakeupExam> MakeupExams = new List<MakeupExam>();
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+
+            if (HttpContext.Session.GetInt32("student_id") == null)
+            {
+                return RedirectToPage("../Login/Login");
+            }
+
             try
             {
                 string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True;Encrypt=False";
@@ -46,6 +52,7 @@ namespace MyApp.Namespace
                 Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
+            return Page();
         }
 
     }

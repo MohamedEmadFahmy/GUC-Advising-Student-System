@@ -7,11 +7,19 @@ namespace MyApp.Namespace
 {
     public class ChooseInstructorModel : PageModel
     {
-        public int studentId = 1;
+        public int? studentId;
         public string message = "";
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (!studentId.HasValue)
+            {
+                return RedirectToPage("../Login/Login");
+            }
+            return Page();
         }
+
         public void OnPost()
         {
             try

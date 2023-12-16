@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.AspNetCore.Session;
 
 namespace Milestone_3.Pages
 {
@@ -24,7 +25,7 @@ namespace Milestone_3.Pages
                     return RedirectToPage("../Admin/Admin");
                 }
 
-                StudentLogin();
+                return StudentLogin();
             }
             else if (Request.Form["Type"].Equals("Advisor"))
             {
@@ -40,7 +41,7 @@ namespace Milestone_3.Pages
         }
 
 
-        public void StudentLogin()
+        public IActionResult StudentLogin()
         {
             try
             {
@@ -55,21 +56,31 @@ namespace Milestone_3.Pages
                 connection.Open();
 
 
-                String sql = "FN_StudentLogin";
+                String sql = "SELECT dbo.FN_StudentLogin(@Student_id, @password)";
 
                 SqlCommand command = new SqlCommand(sql, connection);
 
 
                 command.Parameters.Add(new SqlParameter("@Student_id", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"]) });
 
-                command.Parameters.Add(new SqlParameter("@password", SqlDbType.Int) { Value = Request.Form["password"] });
+                command.Parameters.Add(new SqlParameter("@password", SqlDbType.NVarChar) { Value = Request.Form["password"].ToString() });
 
 
-                bool success = (bool)command.ExecuteScalar();
-
-                // RedirectToPage("../Student/Student");
+                bool success = Convert.ToBoolean(command.ExecuteScalar());
 
                 connection.Close();
+
+                if (success)
+                {
+                    HttpContext.Session.SetInt32("student_id", Convert.ToInt32(Request.Form["StudentID"]));
+                    return RedirectToPage("../Student/Student");
+                }
+                else
+                {
+                    return RedirectToPage();
+                    message = "Incorrect Login Information";
+                }
+
 
             }
             catch (Exception e)
@@ -78,9 +89,51 @@ namespace Milestone_3.Pages
                 throw;
             }
         }
-        public void AdvisorLogin()
+        public IActionResult AdvisorLogin()
         {
+            try
+            {
+                String connectionString = "Data Source=.\\sqlexpress;" +
+                    "Initial Catalog=Advising_System;" +
+                    "Integrated Security=True;" +
+                    "Encrypt=False";
 
+
+                SqlConnection connection = new SqlConnection(connectionString);
+
+                connection.Open();
+
+
+                String sql = "SELECT dbo.FN_StudentLogin(@advisor_id, @password)";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+
+
+                command.Parameters.Add(new SqlParameter("@advisor_id", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"].ToString()) });
+
+                command.Parameters.Add(new SqlParameter("@password", SqlDbType.NVarChar) { Value = Request.Form["password"].ToString() });
+
+
+                bool success = Convert.ToBoolean(command.ExecuteScalar());
+
+
+                connection.Close();
+
+                if (success)
+                {
+                    return RedirectToPage("../Advisor/Advisor");
+                }
+                else
+                {
+                    return RedirectToPage("../Admin/Admin");
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception:  " + e.ToString());
+                throw;
+            }
         }
     }
 

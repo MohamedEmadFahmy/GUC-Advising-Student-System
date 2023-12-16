@@ -7,11 +7,19 @@ namespace MyApp.Namespace
 {
     public class StudentModel : PageModel
     {
-        public int studentId = 2;
+        public int? studentId;
 
         public Student currentStudent;
-        public void OnGet()
+        public IActionResult OnGet()
         {
+
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (!studentId.HasValue)
+            {
+                return RedirectToPage("../Login/Login");
+            }
+
             try
             {
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
@@ -58,6 +66,8 @@ namespace MyApp.Namespace
                 Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
+
+            return Page();
         }
     }
     public class Student

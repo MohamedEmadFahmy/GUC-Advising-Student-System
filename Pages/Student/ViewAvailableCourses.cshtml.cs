@@ -11,10 +11,17 @@ namespace MyApp.Namespace
     {
         public List<Course> Courses = new List<Course>();
         public bool isPosted;
-        public void OnGet()
+        public IActionResult OnGet()
         {
             isPosted = false;
             Courses = new List<Course>();
+
+            if (HttpContext.Session.GetInt32("student_id") == null)
+            {
+                return RedirectToPage("../Login/Login");
+            }
+
+            return Page();
         }
         public void OnPost()
         {

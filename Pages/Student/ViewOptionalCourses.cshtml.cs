@@ -8,13 +8,21 @@ namespace MyApp.Namespace
     public class ViewOptionalCoursesModel : PageModel
     {
 
-        public int studentId = 1;
+        public int? studentId;
         public List<Course> Courses = new List<Course>();
         public bool isPosted = false;
-        public void OnGet()
+        public IActionResult OnGet()
         {
             isPosted = false;
             Courses = new List<Course>();
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (!studentId.HasValue)
+            {
+                return RedirectToPage("../Login/Login");
+            }
+
+            return Page();
         }
         public void OnPost()
         {

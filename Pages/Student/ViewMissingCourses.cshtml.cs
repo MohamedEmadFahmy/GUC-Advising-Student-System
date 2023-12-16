@@ -7,10 +7,17 @@ namespace MyApp.Namespace
 {
     public class ViewMissingCoursesModel : PageModel
     {
-        public int studentId = 9;
+        public int? studentId;
         public List<Course> Courses = new List<Course>();
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (!studentId.HasValue)
+            {
+                return RedirectToPage("../Login/Login");
+            }
+
             try
             {
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
@@ -48,6 +55,7 @@ namespace MyApp.Namespace
                 Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
+            return Page();
 
         }
     }
