@@ -38,8 +38,8 @@ public class InstructorsAssignedCourses : PageModel
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Exception: " + ex.ToString());
-            throw;
+            //Console.WriteLine("Exception: " + ex.ToString());
+                Message = "Error";
         }
     }
 }
