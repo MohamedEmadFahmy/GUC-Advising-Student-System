@@ -9,19 +9,23 @@ namespace MyApp.Namespace
     {
         public int? studentId;
         public string message = "";
-        public IActionResult OnGet()
+        public void OnGet()
         {
             studentId = HttpContext.Session.GetInt32("student_id");
 
-            if (!studentId.HasValue)
+            if (studentId == null)
             {
-                return RedirectToPage("../Login/Login");
+                Response.Redirect("../Login/Login");
+                return;
             }
-            return Page();
         }
 
         public void OnPost()
         {
+            if (studentId == null)
+            {
+                return;
+            }
             try
             {
 

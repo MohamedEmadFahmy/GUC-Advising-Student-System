@@ -7,25 +7,32 @@ namespace MyApp.Namespace
 {
     public class ViewRequiredCoursesModel : PageModel
     {
-        public int? studentId;
+        private int? studentId;
         public List<Course> Courses = new List<Course>();
         public bool isPosted = false;
-        public IActionResult OnGet()
+        public void OnGet()
         {
             isPosted = false;
             Courses = new List<Course>();
 
             studentId = HttpContext.Session.GetInt32("student_id");
 
-            if (!studentId.HasValue)
+            if (studentId == null)
             {
-                return RedirectToPage("../Login/Login");
+                Response.Redirect("../Login/Login");
+                return;
             }
-
-            return Page();
         }
         public void OnPost()
         {
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (studentId == null)
+            {
+                Response.Redirect("../Login/Login");
+                return;
+            }
+
             try
             {
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
@@ -65,7 +72,7 @@ namespace MyApp.Namespace
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.ToString());
-                // throw;
+                throw;
             }
 
         }

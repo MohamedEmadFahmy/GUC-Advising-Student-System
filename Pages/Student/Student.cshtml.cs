@@ -7,17 +7,18 @@ namespace MyApp.Namespace
 {
     public class StudentModel : PageModel
     {
-        public int? studentId;
+        private int? studentId;
 
-        public Student currentStudent;
-        public IActionResult OnGet()
+        public Student currentStudent = new Student();
+        public void OnGet()
         {
 
             studentId = HttpContext.Session.GetInt32("student_id");
 
-            if (!studentId.HasValue)
+            if (studentId == null)
             {
-                return RedirectToPage("../Login/Login");
+                Response.Redirect("../Login/Login");
+                return;
             }
 
             try
@@ -66,8 +67,6 @@ namespace MyApp.Namespace
                 Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
-
-            return Page();
         }
     }
     public class Student

@@ -77,8 +77,8 @@ namespace Milestone_3.Pages
                 }
                 else
                 {
-                    return RedirectToPage();
                     message = "Incorrect Login Information";
+                    return Page();
                 }
 
 
@@ -86,8 +86,9 @@ namespace Milestone_3.Pages
             catch (Exception e)
             {
                 Console.WriteLine("Exception:  " + e.ToString());
-                throw;
+                // throw;
             }
+            return Page();
         }
         public IActionResult AdvisorLogin()
         {

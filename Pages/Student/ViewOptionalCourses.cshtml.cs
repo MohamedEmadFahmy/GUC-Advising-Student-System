@@ -11,21 +11,28 @@ namespace MyApp.Namespace
         public int? studentId;
         public List<Course> Courses = new List<Course>();
         public bool isPosted = false;
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            isPosted = false;
-            Courses = new List<Course>();
+            // isPosted = false;
+            // Courses = new List<Course>();
             studentId = HttpContext.Session.GetInt32("student_id");
 
-            if (!studentId.HasValue)
+            if (studentId == null)
             {
-                return RedirectToPage("../Login/Login");
+                Response.Redirect("../Login/Login");
+                return;
             }
-
-            return Page();
         }
         public void OnPost()
         {
+
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (studentId == null)
+            {
+                return;
+            }
+
             try
             {
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
@@ -41,7 +48,12 @@ namespace MyApp.Namespace
 
                     // cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = Convert.ToInt32(Request.Form["StudentID"]) });
 
+                    // System.Console.WriteLine($"Student id: {studentId}");
+                    // System.Console.WriteLine($"Type: {studentId.GetType}");
+
                     cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = studentId });
+                    // cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = studentId.GetValueOrDefault(0) });
+                    // cmd.Parameters.Add(new SqlParameter("@StudentID", SqlDbType.Int) { Value = 1 });
 
                     cmd.Parameters.Add(new SqlParameter("@current_semester_code", SqlDbType.NVarChar) { Value = Request.Form["SemesterCode"].ToString() });
 

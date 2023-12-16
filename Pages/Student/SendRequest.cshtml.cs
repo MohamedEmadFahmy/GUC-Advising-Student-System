@@ -12,13 +12,14 @@ namespace MyApp.Namespace
         public List<Request> Requests = new List<Request>();
 
         public bool isCourseRequest = true;
-        public IActionResult OnGet()
+        public void OnGet()
         {
             studentId = HttpContext.Session.GetInt32("student_id");
 
-            if (!studentId.HasValue)
+            if (studentId == null)
             {
-                return RedirectToPage("../Login/Login");
+                Response.Redirect("../Login/Login");
+                return;
             }
 
             try
@@ -63,12 +64,17 @@ namespace MyApp.Namespace
                 Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
-            return Page();
         }
 
 
         public void OnPost()
         {
+            studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (studentId == null)
+            {
+                return;
+            }
             try
             {
 

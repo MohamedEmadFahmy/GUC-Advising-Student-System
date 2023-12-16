@@ -11,20 +11,27 @@ namespace MyApp.Namespace
     {
         public List<Course> Courses = new List<Course>();
         public bool isPosted;
-        public IActionResult OnGet()
+        public void OnGet()
         {
             isPosted = false;
             Courses = new List<Course>();
 
-            if (HttpContext.Session.GetInt32("student_id") == null)
-            {
-                return RedirectToPage("../Login/Login");
-            }
+            int? studentId = HttpContext.Session.GetInt32("student_id");
 
-            return Page();
+            if (studentId == null)
+            {
+                Response.Redirect("../Login/Login");
+                return;
+            }
         }
         public void OnPost()
         {
+            int? studentId = HttpContext.Session.GetInt32("student_id");
+
+            if (studentId == null)
+            {
+                return;
+            }
             try
             {
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";

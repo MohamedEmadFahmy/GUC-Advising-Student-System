@@ -12,14 +12,15 @@ namespace MyApp.Namespace
         public List<StudentViewGP> StudentViewGPList = new List<StudentViewGP>();
         public int? studentId;
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
 
             studentId = HttpContext.Session.GetInt32("student_id");
 
-            if (!studentId.HasValue)
+            if (studentId == null)
             {
-                return RedirectToPage("../Login/Login");
+                Response.Redirect("../Login/Login");
+                return;
             }
 
             try
@@ -61,7 +62,6 @@ namespace MyApp.Namespace
                 Console.WriteLine("Exception: " + ex.ToString());
                 throw;
             }
-            return Page();
         }
 
 
