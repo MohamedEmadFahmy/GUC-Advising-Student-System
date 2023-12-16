@@ -1,0 +1,43 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminViewPaymentsModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Payments</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Payment ID</th>
+            <th>Amount</th>
+            <th>Start Date</th>
+            <th>Deadline</th>
+            <th>Installments</th>
+            <th>Fund Percentage</th>
+            <th>Status</th>
+            <th>Student ID</th>
+            <th>Semester Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model.StudentPayments)
+        {
+            <tr>
+                <td>@payment.studentID</td>
+                <td>@payment.studentName</td>
+                <td>@payment.paymentID</td>
+                <td>@payment.amount</td>
+                <td>@payment.startDate</td>
+                <td>@payment.deadline</td>
+                <td>@payment.n_installments</td>
+                <td>@payment.fund_percentage</td>
+                <td>@payment.status</td>
+                <td>@payment.student_ID</td>
+                <td>@payment.semesterCode</td>
+            </tr>
+        }
+    </tbody>
+</table>

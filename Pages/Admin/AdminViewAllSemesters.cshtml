@@ -1,0 +1,26 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminViewAllSemestersModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Semester Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var offeredCourse in Model.offeredCourses)
+        {
+            <tr>
+                <td>@offeredCourse.CourseID</td>
+                <td>@offeredCourse.CourseName</td>
+                <td>@offeredCourse.SemesterCode</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

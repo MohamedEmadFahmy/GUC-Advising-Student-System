@@ -1,0 +1,25 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminIssueInstallmentsModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Admin Issue Installments</h1>
+
+<form method="Post">
+    <input type="number" name="paymentid" placeholder="Payment ID" required />
+    <button id="submitbutton">Issue Installments</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+}
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    }
+</script>

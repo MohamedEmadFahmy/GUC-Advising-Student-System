@@ -1,0 +1,27 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminDeleteSlotModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Admin Delete Slot</h1>
+
+
+<form method="Post">
+    <input type="text" name="currentsemester" placeholder="Current semester" required />
+    <button id="submitbutton">Delete Slot</button>
+</form>
+
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+}
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    }
+</script>

@@ -1,0 +1,27 @@
+﻿@page
+@model SemestersOfferedCoursesModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Semesters Offered with Courses</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Semester Code</th>
+            <th>Course ID</th>
+            <th>Course Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var semesterCourse in Model.SemestersWithCourses)
+        {
+            <tr>
+                <td>@semesterCourse.SemesterCode</td>
+                <td>@semesterCourse.CourseID</td>
+                <td>@semesterCourse.CourseName</td>
+            </tr>
+        }
+    </tbody>
+</table>

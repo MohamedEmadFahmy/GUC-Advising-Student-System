@@ -177,7 +177,30 @@ tr:hover {
 #student-info{
     width: 40vw;
     height: 70vh;
-    background-color: black;
+    background-color: rgb(65, 64, 64);
+    border-radius: 5vh;
     color: white;
+
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-left: 5vh;
+}
+
+#student-info h1 {
+    margin-bottom: 5vh;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    /* font-family: ; */
+}
+#student-info strong {
+    font-size: 18px;
+    font-style: bold;
+    color: #6cb97d;
+}
+#student-info p {
+    font-size: 16px;
 }
 

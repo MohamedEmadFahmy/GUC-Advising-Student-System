@@ -1,0 +1,37 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminListPendingRequestsModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Pending Requests</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Request ID</th>
+            <th>Type</th>
+            <th>Comment</th>
+            <th>Status</th>
+            <th>Credit Hours</th>
+            <th>Course ID</th>
+            <th>Student ID</th>
+            <th>Advisor ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model.PendingRequests)
+        {
+            <tr>
+                <td>@request.RequestID</td>
+                <td>@request.Type</td>
+                <td>@request.Comment</td>
+                <td>@request.Status</td>
+                <td>@request.CreditHours</td>
+                <td>@request.CourseID</td>
+                <td>@request.StudentID</td>
+                <td>@request.AdvisorID</td>
+            </tr>
+        }
+    </tbody>
+</table>

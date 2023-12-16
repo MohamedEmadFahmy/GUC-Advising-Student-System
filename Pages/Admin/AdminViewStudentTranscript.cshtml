@@ -1,0 +1,36 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminViewStudentTranscriptModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Exam Type</th>
+            <th>Grade</th>
+            <th>Semester Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transcriptEntry in Model.transcriptEntries)
+        {
+            <tr>
+                <td>@transcriptEntry.StudentID</td>
+                <td>@transcriptEntry.FirstName</td>
+                <td>@transcriptEntry.LastName</td>
+                <td>@transcriptEntry.CourseID</td>
+                <td>@transcriptEntry.CourseName</td>
+                <td>@transcriptEntry.ExamType</td>
+                <td>@transcriptEntry.Grade</td>
+                <td>@transcriptEntry.SemesterCode</td>
+            </tr>
+        }
+    </tbody>
+</table>

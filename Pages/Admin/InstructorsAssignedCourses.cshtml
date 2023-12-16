@@ -1,0 +1,29 @@
+﻿@page
+@model InstructorsAssignedCourses
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Instructors and Their Assigned Courses</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Instructor ID</th>
+            <th>Instructor Name</th>
+            <th>Course ID</th>
+            <th>Course Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var instructorCourses in Model.InstructorsCoursesList)
+        {
+            <tr>
+                <td>@instructorCourses.InstructorID</td>
+                <td>@instructorCourses.InstructorName</td>
+                <td>@instructorCourses.CourseID</td>
+                <td>@instructorCourses.CourseName</td>
+            </tr>
+        }
+    </tbody>
+</table>

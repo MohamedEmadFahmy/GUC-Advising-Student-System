@@ -26,6 +26,82 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminAddCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5BZGRDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminAddExam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5BZGRFeGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminDeleteCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5EZWxldGVDb3Vyc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminDeleteSlot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5EZWxldGVTbG90LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminIssueInstallments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5Jc3N1ZUluc3RhbGxtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminLinkInstructor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5MaW5rSW5zdHJ1Y3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminLinkStudentToAdvisor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5MaW5rU3R1ZGVudFRvQWR2aXNvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminLinkStudentToCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5MaW5rU3R1ZGVudFRvQ291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminUpdateStudentStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5VcGRhdGVTdHVkZW50U3RhdHVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminViewActiveStudents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5WaWV3QWN0aXZlU3R1ZGVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminViewAllSemesters.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5WaWV3QWxsU2VtZXN0ZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminViewGradPlans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5WaWV3R3JhZFBsYW5zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminViewPayments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5WaWV3UGF5bWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/AdminViewStudentTranscript.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5WaWV3U3R1ZGVudFRyYW5zY3JpcHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/InstructorsAssignedCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW5zdHJ1Y3RvcnNBc3NpZ25lZENvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/ListAdvisors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTGlzdEFkdmlzb3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/ListStudentsWithAdvisors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTGlzdFN0dWRlbnRzV2l0aEFkdmlzb3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/SemestersOfferedCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU2VtZXN0ZXJzT2ZmZXJlZENvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Admin/ViewPendingRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVmlld1BlbmRpbmdSZXF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Advisor/Advisor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWR2aXNvclxBZHZpc29yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -117,14 +193,6 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bxmd4mkyvy
-
-[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Login/AdvisorLogin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cQWR2aXNvckxvZ2luLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = b-2lw3dcnhjc
-
-[D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Login/StudentLogin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cU3R1ZGVudExvZ2luLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = b-jfwj33pb7b
 
 [D:/Semester 5/Databases 1/Project/Milestone 3 .netcore/Milestone_3/Pages/Register/AdvisorRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJcQWR2aXNvclJlZ2lzdGVyLmNzaHRtbA==

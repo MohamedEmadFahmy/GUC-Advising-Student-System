@@ -1,0 +1,35 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminViewGradPlansModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>PlanID</th>
+            <th>Semester Code</th>
+            <th>Semester Credit Hours</th>
+            <th>Expected Grad Date</th>
+            <th>Advisor ID</th>
+            <th>Student ID</th>
+            <th>Advisor ID (From View)</th>
+            <th>Advisor Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var graduationPlan in Model.graduationPlans)
+        {
+            <tr>
+                <td>@graduationPlan.PlanID</td>
+                <td>@graduationPlan.SemesterCode</td>
+                <td>@graduationPlan.SemesterCreditHours</td>
+                <td>@graduationPlan.ExpectedGradDate</td>
+                <td>@graduationPlan.AdvisorID</td>
+                <td>@graduationPlan.StudentID</td>
+                <td>@graduationPlan.AdvisorIDFromView</td>
+                <td>@graduationPlan.AdvisorName</td>
+            </tr>
+        }
+    </tbody>
+</table>

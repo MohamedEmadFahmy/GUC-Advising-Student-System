@@ -55,3 +55,5 @@ select * from Exam_Student
 select * from MakeUp_Exam
 
 select * from Student
+
+SELECT * FROM Students_Courses_transcript

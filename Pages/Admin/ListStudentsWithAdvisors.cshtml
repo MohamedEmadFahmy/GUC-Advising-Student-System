@@ -1,0 +1,33 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.ListStudentsWithAdvisorsModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>
+    Students And Advisors
+</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Advisor ID</th>
+            <th>Advisor Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var studentWithAdvisor in Model.StudentsWithAdvisors)
+        {
+            <tr>
+                <td>@studentWithAdvisor.StudentID</td>
+                <td>@studentWithAdvisor.FirstName</td>
+                <td>@studentWithAdvisor.LastName</td>
+                <td>@studentWithAdvisor.AdvisorID</td>
+                <td>@studentWithAdvisor.AdvisorName</td>
+            </tr>
+        }
+    </tbody>
+</table>

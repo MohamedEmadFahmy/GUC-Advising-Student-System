@@ -1,0 +1,43 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminViewActiveStudentsModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>GPA</th>
+            <th>Faculty</th>
+            <th>Email</th>
+            <th>Major</th>
+            <th>Financial Status</th>
+            <th>Semester</th>
+            <th>Acquired Hours</th>
+            <th>Assigned Hours</th>
+            <th>Advisor ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.ActiveStudents)
+        {
+            <tr>
+                <td>@student.StudentID</td>
+                <td>@student.Name</td>
+                <td>@student.Password</td>
+                <td>@student.GPA</td>
+                <td>@student.Faculty</td>
+                <td>@student.Email</td>
+                <td>@student.Major</td>
+                <td>@student.FinancialStatus</td>
+                <td>@student.Semester</td>
+                <td>@student.AcquiredHours</td>
+                <td>@student.AssignedHours</td>
+                <td>@student.AdvisorID</td>
+            </tr>
+        }
+    </tbody>
+</table>

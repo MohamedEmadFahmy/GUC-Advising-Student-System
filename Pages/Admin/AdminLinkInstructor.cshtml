@@ -1,0 +1,31 @@
+﻿@page
+@model DataBaseMs3.Pages.Admin.AdminLinkInstructorModel
+@{
+    Layout = "/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Link Instructor</h1>
+
+
+
+
+
+<form method="post">
+    <input type="number" name="courseID" placeholder="Course ID" required />
+    <input type="number" name="instructorID" placeholder="Instructor ID" required />
+    <input type="number" name="slotID" placeholder="Slot ID" required />
+    <button id="submitbutton">Link</button>
+</form>
+
+ @if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Message
+    </div>
+} 
+
+<script>
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        event.preventDefault();
+    }
+</script>
