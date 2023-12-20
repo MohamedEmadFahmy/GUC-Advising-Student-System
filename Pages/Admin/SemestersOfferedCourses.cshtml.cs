@@ -9,7 +9,14 @@ public class SemestersOfferedCoursesModel : PageModel
 
 	public void OnGet()
 	{
-		try
+        var result = HttpContext.Session.GetInt32("isAdmin");
+
+        if (result == null)
+        {
+            Response.Redirect("../Login/Login");
+            return;
+        }
+        try
 		{
 			string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
 			using (SqlConnection connection = new SqlConnection(connectionString))
@@ -37,8 +44,7 @@ public class SemestersOfferedCoursesModel : PageModel
 		}
 		catch (Exception ex)
 		{
-			Console.WriteLine("Exception: " + ex.ToString());
-			throw;
+			//Console.WriteLine("Exception: " + ex.ToString());
 		}
 	}
 }

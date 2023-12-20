@@ -84,20 +84,20 @@ a {
     flex-direction: column;
 }
 
-#left-area input {
+#left-area input, #phone-area input {
     width: 11.458vw;
 }
-#left-area button[type="submit"] {
+#left-area button[type="submit"], #phone-area button[type="submit"] {
     background-color: var(--main-color);
     background-color: orange;
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
-#left-area h1 {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    color: red;
-}
+    #left-area h1, #phone-area h1 {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        color: red;
+    }
 
 #right-area {
     /* background-color: blue; */
@@ -169,7 +169,7 @@ tr:hover {
     color: white;
 }
 
-#left-area .form-check-input[type="radio"] {
+#left-area .form-check-input[type="radio"]{
     width: 1.2em;
     height: 1.2em;
 }
@@ -196,11 +196,23 @@ tr:hover {
     /* font-family: ; */
 }
 #student-info strong {
-    font-size: 18px;
-    font-style: bold;
+    font-size: 12px;
+    font-weight: bold;
     color: #6cb97d;
 }
 #student-info p {
-    font-size: 16px;
+    font-size: 11px;
+}
+
+#phone-area {
+    width: 30vw;
+    height: 65vh;
+    background-color: rgb(65, 64, 64);
+    border-radius: 5vh;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 

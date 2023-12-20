@@ -19,6 +19,37 @@
     <p><strong>Your Student ID: </strong>@HttpContext.Session.GetInt32("student_id")</p>
 </div>
 
+<div id="phone-area">
+    <form method="post">
+
+        <label for="phone" class="form-label fs-4 mt-3">Phone Number:</label>
+        <input type="tel" class="form-control mb-3" name="phone" id="phone" placeholder="Enter Phone Number:" value="01010844431" required />
+
+
+        <button type="submit" class="btn btn-secondary mt-3">Add Number</button>
+    </form>
+
+    @if (Model.message.Length > 0 || Model.errormessage.Length>0)
+    {
+        if (Model.errormessage.Length > 0)
+        {
+            <div class="alert alert-danger">
+                @Model.errormessage
+            </div>
+        }
+        else if (Model.message.Length > 0)
+        {
+            <div class="alert alert-success">
+                @Model.message
+            </div>
+            
+        }
+    }
+</div>
+
+
+
+
     
 
 

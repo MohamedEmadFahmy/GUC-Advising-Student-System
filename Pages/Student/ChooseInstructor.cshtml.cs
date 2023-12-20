@@ -9,6 +9,7 @@ namespace MyApp.Namespace
     {
         public int? studentId;
         public string message = "";
+        public bool isPosted;
         public void OnGet()
         {
             studentId = HttpContext.Session.GetInt32("student_id");
@@ -22,6 +23,7 @@ namespace MyApp.Namespace
 
         public void OnPost()
         {
+            studentId = HttpContext.Session.GetInt32("student_id");
             if (studentId == null)
             {
                 return;
@@ -48,6 +50,8 @@ namespace MyApp.Namespace
                 ChooseExam.ExecuteNonQuery();
 
                 connection.Close();
+
+                isPosted = true;
 
 
             }

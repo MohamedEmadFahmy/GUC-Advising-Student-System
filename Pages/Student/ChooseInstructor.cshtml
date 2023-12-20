@@ -24,21 +24,32 @@
 
         <button type="submit" class="btn btn-secondary mt-3">Choose Instructor</button>
     </form>
+    @if (Model.isPosted)
+    {
+        if (Model.message.Equals("Error choosing instructor"))
+        {
+            <div class="alert alert-danger" role="alert">
+                @Model.message
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success" role="alert">
+                @Model.message
+            </div>
+
+        }
+    }
 </div>
 
-@if (Model.message.Length > 0)
-{
-    <div class="alert alert-success" role="alert">
-        @Model.message
-    </div>
-}
+
 
 <script>
 
-    @* const myButton = document.querySelector("button");
+    // const myButton = document.querySelector("button");
 
-    myButton.addEventListener("click", function (event) {
-        event.preventDefault();
-    }); *@
+    // myButton.addEventListener("click", function (event) {
+    //     event.preventDefault();
+    // });
 
 </script>

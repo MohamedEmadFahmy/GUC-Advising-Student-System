@@ -9,6 +9,13 @@ namespace DataBaseMs3.Pages.Admin
 
         public void OnGet()
         {
+            var result = HttpContext.Session.GetInt32("isAdmin");
+
+            if (result == null)
+            {
+                Response.Redirect("../Login/Login");
+                return;
+            }
             try
             {
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
@@ -37,21 +44,20 @@ namespace DataBaseMs3.Pages.Admin
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+                //Console.WriteLine("Exception: " + ex.ToString());            }
             }
         }
-    }
 
-    public class Request
-    {
-        public int RequestID;
-        public string Type;
-        public string Comment;
-        public string Status;
-        public string CreditHours;
-        public string CourseID;
-        public int StudentID;
-        public int AdvisorID;
+        public class Request
+        {
+            public int RequestID;
+            public string Type;
+            public string Comment;
+            public string Status;
+            public string CreditHours;
+            public string CourseID;
+            public int StudentID;
+            public int AdvisorID;
+        }
     }
 }

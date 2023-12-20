@@ -76,7 +76,20 @@
                 <td>@request.requestId</td>
                 <td>@request.type</td>
                 <td>@request.comment</td>
-                <td>@request.status</td>
+                
+                @if (@request.status.ToLower() == "pending")
+                {
+                    <td class="bg-warning">@request.status</td>
+                }
+                else if (@request.status.ToLower() == "accepted")
+                {
+                    <td class="bg-success">@request.status</td>
+                }
+                else
+                {
+                    <td class="bg-danger">@request.status</td>
+                }
+
                 @if(@request.creditHours == "None"){
                     <td class="bg-danger" >@request.creditHours</td>
                 }

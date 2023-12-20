@@ -1,16 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MyApp.Namespace;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace MyApp.Namespace.Admin
+namespace DataBaseMs3.Pages.Admin
 {
     public class AdminAddingSemesterModel : PageModel
     {
         public string Message { get; set; } = "";
         public void OnGet()
         {
+            var result = HttpContext.Session.GetInt32("isAdmin");
+
+            if (result == null)
+            {
+                Response.Redirect("../Login/Login");
+            }
         }
 
         public void OnPost()
@@ -45,9 +52,8 @@ namespace MyApp.Namespace.Admin
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: " + ex.ToString());
-                // throw;
-                Message = "error";
+               //Console.WriteLine("Exception: " + ex.ToString());
+                Message = "Error";
             }
         }
     }

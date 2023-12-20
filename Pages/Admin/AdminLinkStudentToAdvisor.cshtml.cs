@@ -12,6 +12,12 @@ namespace DataBaseMs3.Pages.Admin
 
         public void OnGet()
         {
+            var result = HttpContext.Session.GetInt32("isAdmin");
+
+            if (result == null)
+            {
+                Response.Redirect("../Login/Login");
+            }
         }
 
         public void OnPost()
@@ -44,8 +50,8 @@ namespace DataBaseMs3.Pages.Admin
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+              //Console.WriteLine("Exception: " + ex.ToString());
+                Message = "Error";
             }
         }
     }

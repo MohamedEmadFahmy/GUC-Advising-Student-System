@@ -1,7 +1,6 @@
 ﻿@page
 @model DataBaseMs3.Pages.Admin.AdminAddExamModel
 @{
-    Layout = "/Pages/Shared/_AdminLayout.cshtml";
 }
 
 
@@ -9,7 +8,7 @@
 
 <form method="Post">
     <input type="text" name="type" placeholder="Type" required />
-    <input type="datetime" name="date" placeholder="Date" required />
+    <input type="date" name="date" placeholder="Date" required />
     <input type="number" name="courseID" placeholder="Course ID" required />
     <button id="submitbutton">Add Exam</button>
 </form>

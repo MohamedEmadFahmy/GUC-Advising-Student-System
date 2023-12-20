@@ -7,6 +7,12 @@ namespace MyApp.Namespace
     {
         public void OnGet()
         {
+            var result = HttpContext.Session.GetInt32("isAdmin");
+
+            if (result == null)
+            {
+                Response.Redirect("../Login/Login");
+            }
         }
     }
 }

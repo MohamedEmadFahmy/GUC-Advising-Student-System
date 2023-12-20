@@ -21,6 +21,7 @@ namespace MyApp.Namespace
         }
         public void OnPost()
         {
+            studentId = HttpContext.Session.GetInt32("student_id");
             if (studentId == null)
             {
                 return;

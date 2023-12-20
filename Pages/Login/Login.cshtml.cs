@@ -12,8 +12,8 @@ namespace Milestone_3.Pages
         public bool loginSuccessful;
 
         private string adminId = "0";
-        private string adminPassword = "admin";
-        public IActionResult OnPost()
+        private string adminPassword = "admin"; 
+        public void OnPost()
         {
             // System.Console.WriteLine(Request.Form["Type"]);
 
@@ -22,26 +22,27 @@ namespace Milestone_3.Pages
             {
                 if (Request.Form["StudentID"] == adminId && Request.Form["password"].Equals(adminPassword))
                 {
-                    return RedirectToPage("../Admin/Admin");
+                    HttpContext.Session.SetString("isAdmin", "true");
+                    Response.Redirect("../Admin/Admin");
                 }
 
-                return StudentLogin();
+                StudentLogin();
             }
             else if (Request.Form["Type"].Equals("Advisor"))
             {
                 if (Request.Form["AdvisorID"] == adminId && Request.Form["password"].Equals(adminPassword))
                 {
-                    return RedirectToPage("../Admin/Admin");
+                    HttpContext.Session.SetString("isAdmin", "true");
+                    Redirect("../Admin/Admin");
                 }
 
-                return RedirectToPage("../Advisor/Advisor");
+                AdvisorLogin();
             }
-            return RedirectToPage();
             // StudentLogin();
         }
 
 
-        public IActionResult StudentLogin()
+        public void StudentLogin()
         {
             try
             {
@@ -73,12 +74,12 @@ namespace Milestone_3.Pages
                 if (success)
                 {
                     HttpContext.Session.SetInt32("student_id", Convert.ToInt32(Request.Form["StudentID"]));
-                    return RedirectToPage("../Student/Student");
+                    Response.Redirect("../Student/Student");
                 }
                 else
                 {
                     message = "Incorrect Login Information";
-                    return Page();
+                    //return Page();
                 }
 
 
@@ -88,9 +89,9 @@ namespace Milestone_3.Pages
                 Console.WriteLine("Exception:  " + e.ToString());
                 // throw;
             }
-            return Page();
+            //return Page();
         }
-        public IActionResult AdvisorLogin()
+        public void AdvisorLogin()
         {
             try
             {
@@ -105,7 +106,7 @@ namespace Milestone_3.Pages
                 connection.Open();
 
 
-                String sql = "SELECT dbo.FN_StudentLogin(@advisor_id, @password)";
+                String sql = "SELECT dbo.FN_AdvisorLogin(@advisor_id, @password)";
 
                 SqlCommand command = new SqlCommand(sql, connection);
 
@@ -122,18 +123,17 @@ namespace Milestone_3.Pages
 
                 if (success)
                 {
-                    return RedirectToPage("../Advisor/Advisor");
+                    Response.Redirect("../Advisor/Advisor");
                 }
                 else
                 {
-                    return RedirectToPage("../Admin/Admin");
+                    message = "Incorrect Login Information or your account is blocked";
                 }
-
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception:  " + e.ToString());
-                throw;
+                //throw;
             }
         }
     }

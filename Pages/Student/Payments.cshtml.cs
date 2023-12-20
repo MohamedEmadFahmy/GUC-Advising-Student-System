@@ -18,6 +18,7 @@ namespace MyApp.Namespace
 
             if (studentId == null)
             {
+                Response.Redirect("../Login/Login");
                 return;
             }
             try

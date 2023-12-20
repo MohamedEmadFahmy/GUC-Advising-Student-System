@@ -9,6 +9,13 @@ namespace DataBaseMs3.Pages.Admin
         public List<StudentsCoursesTranscript> transcriptEntries = new List<StudentsCoursesTranscript>();
         public void OnGet()
         {
+            var result = HttpContext.Session.GetInt32("isAdmin");
+
+            if (result == null)
+            {
+                Response.Redirect("../Login/Login");
+                return;
+            }
             try
             {
 
@@ -29,7 +36,7 @@ namespace DataBaseMs3.Pages.Admin
                         CourseID = reader.GetInt32(3),
                         CourseName = reader.GetString(4),
                         ExamType = reader.GetString(5),
-                        Grade = reader.IsDBNull(6) ? "No grade yet" : reader.GetString(6),
+                        Grade = reader.GetString(6),
                         SemesterCode = reader.GetString(7)
                     };
 
@@ -39,8 +46,7 @@ namespace DataBaseMs3.Pages.Admin
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception: " + ex.ToString());
-                throw;
+                //Console.WriteLine("Exception: " + ex.ToString());
             }
         }
     }

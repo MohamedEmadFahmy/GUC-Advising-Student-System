@@ -1,9 +1,8 @@
 ﻿@page
-@model Milestone_3.Pages.LoginModel
+@model MyApp.Namespace.RegisterModel
 @{
     Layout = null;
 }
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,17 +11,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
 </head>
 <body>
-    
-    <div id="mainContent">
-        <h1>Login</h1>
-        <form method="post">
-            @* <label for="StudentID" class="form-label fs-4 mt-3">Student ID</label>
-            <input type="text" class="form-control mb-3" name="StudentID" placeholder="Enter Student ID"> *@
 
-            @* <label class="form-label fs-4 mt-3">Type of Request</label> *@
+    <div id="mainContent">
+        <h1>Register</h1>
+
+        @if (Model.successMessage.Length > 0)
+        {
+            <div class="alert-success">
+                @Model.successMessage
+            </div>
+        }
+
+        @if (Model.errorMessage.Length > 0)
+        {
+            <div class="alert-danger">
+                @Model.errorMessage
+            </div>
+        }
+
+        <form method="post">
             <div id="radiobuttons">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="Type" id="student" value="Student" checked>
@@ -38,43 +48,36 @@
                 </div>
             </div>
 
-            <div id="StudentIdInput">
-                <label for="StudentID" class="form-label fs-4 mt-3">Student ID</label>
-                <input type="text" class="form-control mb-3" name="StudentID" placeholder="Enter Student ID" value="1">
-            </div>
-            
-
-            <div id="creditHoursInput" style="display: none;">
+            <div id="AdvisorIdInput" style="display: none;">
                 <label for="AdvisorID" class="form-label fs-4 mt-3">Advisor ID</label>
                 <input type="text" class="form-control mb-3" name="AdvisorID" placeholder="Enter Advisor ID" value="1">
             </div>
 
+            <label for="firstName" class="form-label fs-4 mt-3">First Name</label>
+            <input type="text" class="form-control mb-3" name="firstName" placeholder="Enter First Name" value="Mohamed">
+
+            <label for="lastName" class="form-label fs-4 mt-3">Last Name</label>
+            <input type="text" class="form-control mb-3" name="lastName" placeholder="Enter Last Name" value="Emad">
+
             <label for="password" class="form-label fs-4 mt-3">Password</label>
             <input type="text" class="form-control mb-3" name="password" placeholder="Enter Password" value="password123">
 
+            <label for="faculty" class="form-label fs-4 mt-3">Faculty</label>
+            <input type="text" class="form-control mb-3" name="faculty" placeholder="Enter Faculty" value="MET">
 
+            <label for="email" class="form-label fs-4 mt-3">Email</label>
+            <input type="text" class="form-control mb-3" name="email" placeholder="Enter Email" value="email@gmail.com">
+
+
+            <label for="major" class="form-label fs-4 mt-3">Major</label>
+            <input type="text" class="form-control mb-3" name="major" placeholder="Enter Major" value="CSEN">
+
+            <label for="semester" class="form-label fs-4 mt-3">Semester</label>
+            <input type="text" class="form-control mb-3" name="semester" placeholder="Enter Semester" value="1">
 
             <button type="submit" class="btn btn-secondary mt-3">Submit</button>
         </form>
-
-        @if (Model.message.Length > 0)
-        {
-            if (Model.message.Equals("Incorrect Login Information"))
-            {
-                <div class="alert alert-danger" role="alert">
-                    @Model.message
-                </div>
-            }
-            else
-            {
-                <div class="alert alert-success" role="alert">
-                    @Model.message
-                </div>
-
-            }
-        }
-
-        <a asp-area="" asp-page="/Register/Register" class="text-white">Register</a>
+        <a asp-area="" asp-page="/Login/Login" class="text-white">Login</a>
     </div>
 
 
@@ -107,11 +110,10 @@
         });
     </script>
 
-    
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/_framework/aspnetcore-browser-refresh.js"></script>
 </body>
 </html>
-

@@ -9,6 +9,13 @@ public class InstructorsAssignedCourses : PageModel
 
     public void OnGet()
     {
+        var result = HttpContext.Session.GetInt32("isAdmin");
+
+        if (result == null)
+        {
+            Response.Redirect("../Login/Login");
+            return;
+        }
         try
         {
             string connectionString = "Data Source=.\\sqlexpress;Initial Catalog=Advising_System;Integrated Security=True";
@@ -38,8 +45,7 @@ public class InstructorsAssignedCourses : PageModel
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Exception: " + ex.ToString());
-            throw;
+            //Console.WriteLine("Exception: " + ex.ToString());
         }
     }
 }
